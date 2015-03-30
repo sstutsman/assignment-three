@@ -15,22 +15,19 @@ public class Album {
 
     private String albumCoverName;
 
-    private String[] songs;
-
     private int numTracks;
 
     private int year;
 
 
-    public Album(String name, String artist, String publisher, String genre, String albumCoverName,
-                 String[] songs, int numTracks, int year) {
+    public Album(String name, String artist, String publisher, String genre,
+                 String albumCoverName, int numTracks, int year) {
 
         this.name = name;
         this.artist = artist;
         this.publisher = publisher;
         this.genre = genre;
         this.albumCoverName = albumCoverName;
-        this.songs = songs;
         this.numTracks = numTracks;
         this.year = year;
     }//end Album method
@@ -58,11 +55,6 @@ public class Album {
     public String getAlbumCoverName() {
         return albumCoverName;
     }//end getAlbumCoverName
-
-    public String[] getSongs() {
-
-        return songs;
-    }//end getSongs method
 
     public int getNumTracks() {
 

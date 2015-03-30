@@ -1,39 +1,39 @@
 package com.example.br161.assignmentthree;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+
+    private RecyclerView recyclerAlbums;
+
+    private List<Album> albums;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+
+        recyclerAlbums = (RecyclerView) findViewById(R.id.recycler_albums);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+        recyclerAlbums.setLayoutManager(layoutManager);
+
+        albums = mockAlbums();
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    }//end onCreate method
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private List<Album> mockAlbums() {
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        List<Album> albums = new ArrayList<>();
+        albums.add(new Album("Skid Row", "Skid Row", "Atlantic", "Rock", "skidRow", 11, 1989));
 
-        return super.onOptionsItemSelected(item);
-    }
-}
+        return albums;
+    }//end mockAlbums method
+}//end MainActivity class
