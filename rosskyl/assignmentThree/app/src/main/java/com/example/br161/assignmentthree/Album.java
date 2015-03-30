@@ -5,7 +5,7 @@ package com.example.br161.assignmentthree;
  */
 public class Album {
 
-    private String name;
+    private String title;
 
     private String artist;
 
@@ -20,10 +20,10 @@ public class Album {
     private int year;
 
 
-    public Album(String name, String artist, String publisher, String genre,
+    public Album(String title, String artist, String publisher, String genre,
                  String albumCoverName, int numTracks, int year) {
 
-        this.name = name;
+        this.title = title;
         this.artist = artist;
         this.publisher = publisher;
         this.genre = genre;
@@ -32,9 +32,9 @@ public class Album {
         this.year = year;
     }//end Album method
 
-    public String getName() {
+    public String getTitle() {
 
-        return name;
+        return title;
     }//end getName method
 
     public String getArtist() {
