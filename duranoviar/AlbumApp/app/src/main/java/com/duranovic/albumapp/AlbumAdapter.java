@@ -39,13 +39,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     @Override
     // This method assigns the values from the contacts list we passed in to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvName.setText(albums.get(position).getName());
+        holder.tvDescription.setText(albums.get(position).getName());
     }
 
     @Override
     // This simple method is needed for the RecyclerView.
     public int getItemCount() {
-        return contacts.size();
+        return albums.size();
     }
 
     // This is our ViewHolder inner class. Very important!
@@ -53,19 +53,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
         ItemClickListener listener;
 
-        TextView tvName;
-        TextView tvAddress;
+        TextView tvDescription;
 
 
         // We map our views, and assign listeners in the ViewHolder constructor
         public ViewHolder(View itemView, ItemClickListener listener) {
             super(itemView);
             this.listener = listener;
-            tvName = (TextView) itemView.findViewById(R.id.tv_name);
-            tvAddress = (TextView) itemView.findViewById(R.id.tv_address);
+            tvDescription = (TextView) itemView.findViewById(R.id.tv_description);
 
-            tvName.setOnClickListener(this);
-            tvAddress.setOnClickListener(this);
+            tvDescription.setOnClickListener(this);
         }
 
         // This method is just to pass on the onClick event to our individual items! Neat!
