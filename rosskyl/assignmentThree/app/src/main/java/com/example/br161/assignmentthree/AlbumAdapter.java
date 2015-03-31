@@ -46,9 +46,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvArtist.setText(albums.get(position).getArtist());
         holder.tvGenre.setText(albums.get(position).getGenre());
         holder.tvPublisher.setText(albums.get(position).getPublisher());
-        holder.tvNumTracks.setText(albums.get(position).getNumTracks() + "");
+        holder.tvNumTracks.setText(albums.get(position).getNumTracks() + " Tracks");
         holder.tvYear.setText(albums.get(position).getYear() + "");
         holder.albumCover.setImageDrawable(Drawable.createFromPath(imageName));
+        //TODO fix the image path
     }//end onBindViewHolder method
 
     @Override
@@ -58,7 +59,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     }//end getItemCount method
 
 
-    //TODO add all of the views
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ItemClickListener listener;

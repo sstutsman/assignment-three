@@ -1,6 +1,8 @@
 package com.example.br161.assignmentthree;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,29 +13,18 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private RecyclerView recyclerAlbums;
 
-    private List<Album> albums;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        recyclerAlbums = (RecyclerView) findViewById(R.id.recycler_albums);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
-        recyclerAlbums.setLayoutManager(layoutManager);
-
-        albums = mockAlbums();
-
-
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new RecyclerViewFragment())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
     }//end onCreate method
 
-    private List<Album> mockAlbums() {
 
-        List<Album> albums = new ArrayList<>();
-        albums.add(new Album("Skid Row", "Skid Row", "Atlantic", "Rock", "skidRow", 11, 1989));
-
-        return albums;
-    }//end mockAlbums method
 }//end MainActivity class
