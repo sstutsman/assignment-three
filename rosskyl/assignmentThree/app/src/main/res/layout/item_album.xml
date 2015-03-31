@@ -10,7 +10,7 @@
         android:layout_width="@dimen/album_cover_height"
         android:layout_height="@dimen/album_cover_width"
         android:layout_margin="@dimen/margin_picture"
-        android:src="@drawable/skidRow" />
+        android:src="@drawable/skid_row" />
 
     <LinearLayout
         android:layout_width="wrap_content"

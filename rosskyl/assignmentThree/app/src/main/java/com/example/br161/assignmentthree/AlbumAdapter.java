@@ -53,6 +53,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
+
         return albums.size();
     }//end getItemCount method
 
@@ -81,17 +82,27 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
 
-        }
+            albumCover = (ImageView) itemView.findViewById(R.id.image_album_cover);
+            tvTitle = (TextView) itemView.findViewById(R.id.tv_album_title);
+            tvArtist = (TextView) itemView.findViewById(R.id.tv_artist);
+            tvPublisher = (TextView) itemView.findViewById(R.id.tv_publisher);
+            tvGenre = (TextView) itemView.findViewById(R.id.tv_genre);
+            tvNumTracks = (TextView) itemView.findViewById(R.id.tv_num_tracks);
+            tvYear = (TextView) itemView.findViewById(R.id.tv_year);
+
+            albumCover.setOnClickListener(this);
+        }//end ViewHolder method
 
         // This method is just to pass on the onClick event to our individual items! Neat!
         @Override
         public void onClick(View view) {
+
             listener.onItemClick(view, getPosition());
         }
 
         // This is the interface which forces our Adapter to implement the OnClickListener
         public interface ItemClickListener {
             void onItemClick(View view, int position);
-        }
-    }
-}//end AlbumAdapter method
+        }//end ItemClickListener interface
+    }//end ViewHolder class
+}//end AlbumAdapter class
