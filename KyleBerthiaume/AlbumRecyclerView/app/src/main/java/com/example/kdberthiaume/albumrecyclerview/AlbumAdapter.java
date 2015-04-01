@@ -29,7 +29,27 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         // inflate layout to be repeated
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_item, parent, false);
 
+        // Creating instance of ViewHolder for handling click events
+        ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
+            public void onItemClick(View view, int position){
+                // We can handle click events in here, but only if we have
+                // registered the listeners in the ViewHolder
+            }
+        });
+
+        return viewHolder;
     }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return albums.size();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ItemClickListener listener;
 
@@ -55,18 +75,14 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvAlbumArt.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            listener.onItemClick(view, getPosition());
+        }
+
+        // Interface to force Adapter to implement the OnClickListener
+        public interface ItemClickListener {
+            void onItemClick(View view, int position);
+        }
     }
-
-    @Override
-    public void onClick(View view) {
-        listener.onItemClick(view, getPosition());
-    }
-
-    // Interface to force Adapter to implement the OnClickListener
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-
-
 }
