@@ -1,45 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="6dip" >
 
 
 
 
-    <ImageView
-        android:id="@+id/albumImageView"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    android:layout_margin="0dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    android:baselineAligned="false">
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="6dip"
-        android:contentDescription="TODO"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/artistNameTextView"
-        android:layout_width="fill_parent"
-        android:layout_height="26dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/albumImageView"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="Description"
-        android:textSize="12sp" />
-
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/artistNameTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/albumImageView"
-        android:gravity="center_vertical"
-        android:text="Example application"
-        android:textSize="16sp" />
+        card_view:cardCornerRadius="1dp"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="#ff95a5ff">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-</RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:minHeight="200dp"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/albumImageView"
+            android:src="@drawable/ic_launcher"
+           android:scaleType="fitXY"
+
+            />
+
+
+        <TextView
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/nameTextView"
+            android:text="Album Name"
+            />
+
+        <TextView
+            android:id="@+id/artistNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist Name"
+            />
+
+</LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+</LinearLayout>
+
+
+
