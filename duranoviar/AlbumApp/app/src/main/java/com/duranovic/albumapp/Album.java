@@ -4,14 +4,18 @@ package com.duranovic.albumapp;
 // 03/30/2015
 
 
+import android.graphics.drawable.Drawable;
+
 public class Album {
+    private Drawable albumArt;
     private String name;
     private String artist;
     private String trackCount;
     private String year;
     private String publisher;
 
-    public Album(String name, String artist, String trackCount, String year, String publisher) {
+    public Album(Drawable albumArt, String name, String artist, String trackCount, String year, String publisher) {
+        this.albumArt = albumArt;
         this.name = name;
         this.artist = artist;
         this.trackCount = trackCount;
@@ -37,6 +41,10 @@ public class Album {
 
     public String getPublisher() {
         return publisher;
+    }
+
+    public Drawable getalbumArt() {
+        return albumArt;
     }
 
 }

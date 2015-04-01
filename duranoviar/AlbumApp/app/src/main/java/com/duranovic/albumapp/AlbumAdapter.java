@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -40,6 +41,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     // This method assigns the values from the contacts list we passed in to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
 
+        // set the image
+        holder.ivImage.setImageDrawable(albums.get(position).getalbumArt());
         // set the description text
         holder.tvDescription.setText(albums.get(position).getName() + "\n" +
                 albums.get(position).getArtist() + "\n" +
@@ -61,6 +64,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         ItemClickListener listener;
 
         TextView tvDescription;
+        ImageView ivImage;
 
 
         // We map our views, and assign listeners in the ViewHolder constructor
@@ -68,8 +72,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
             tvDescription = (TextView) itemView.findViewById(R.id.tv_description);
+            ivImage = (ImageView) itemView.findViewById(R.id.iv_image);
 
             tvDescription.setOnClickListener(this);
+            ivImage.setOnClickListener(this);
         }
 
         // This method is just to pass on the onClick event to our individual items! Neat!

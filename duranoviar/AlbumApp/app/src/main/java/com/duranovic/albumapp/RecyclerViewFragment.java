@@ -1,6 +1,7 @@
 package com.duranovic.albumapp;
 
 import android.app.Fragment;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,7 +35,7 @@ public class RecyclerViewFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Map our view
-        recyclerAlbums = (RecyclerView) view.findViewById(R.id.recycler_contacts);
+        recyclerAlbums = (RecyclerView) view.findViewById(R.id.recycler_albums);
 
         // Every RecyclerView needs a LayoutManager. Notice that it's an inner class.
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -51,16 +52,26 @@ public class RecyclerViewFragment extends Fragment {
     private List<Album> mockAlbums() {
         // Creates a list of Contacts and fills them up with data
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album("Title1", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title2", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title3", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title4", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title5", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title6", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title7", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title8", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title9", "Artist", "15", "1987","Publisher"));
-        albums.add(new Album("Title10", "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey), "Title1",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title2",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title3",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title4",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title5",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title6",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title7",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title8",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title9",
+                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title10",
+                "Artist", "15", "1987","Publisher"));
 
         return albums;
     }
