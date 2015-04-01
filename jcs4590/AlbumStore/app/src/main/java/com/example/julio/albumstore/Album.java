@@ -8,10 +8,17 @@ import java.util.Date;
 public class Album {
 
     protected String name;
-    protected String ArtistName;
+    protected String artistName;
     protected String publisher;
     protected String coverArtURLString;
     protected Date releaseDate;
     protected int trackCount;
+
+    public Album(String name, String artistName, String coverArtURLString){
+        this.artistName = artistName;
+        this.name = name;
+        this.coverArtURLString = coverArtURLString;
+
+    }
 
 }

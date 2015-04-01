@@ -8,13 +8,17 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends Activity {
 
 
     private RecyclerView albumsRecyclerView;
     private RecyclerView.Adapter albumReyclerViewAdpter;
-    private RecyclerView.LayoutManager albumRecylerViewLayoutManger;
+    LinearLayoutManager layoutManager;
+    private  List<Album> dataSet;
 
     private String[] albums;
 
@@ -26,10 +30,21 @@ public class MainActivity extends Activity {
         albumsRecyclerView = (RecyclerView) findViewById(R.id.albumRecycleView);
         albumsRecyclerView.setHasFixedSize(true);
 
-        albumRecylerViewLayoutManger = new LinearLayoutManager(this);
-        albumsRecyclerView.setLayoutManager(albumRecylerViewLayoutManger);
 
 
+        dataSet = new ArrayList<Album>();
+        dataSet.add(new Album("BLITZ","Julio Salamanca","http://www.faithmemorialchurch.org/wp-content/uploads/2013/12/Blitz.jpg"));
+        dataSet.add(new Album("CRAZYBITCH","Jennie Beldo","https://s-media-cache-ak0.pinimg.com/236x/2f/bf/6a/2fbf6ace6e9b4ccca5e09ac8d6c90055.jpg"));
+
+
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        albumsRecyclerView.setLayoutManager(layoutManager);
+
+        albumReyclerViewAdpter = new AlbumAdapter(this,dataSet);
+        albumsRecyclerView.setAdapter(albumReyclerViewAdpter);
+//        albumRecylerViewLayoutManger = new LinearLayoutManager(this);
+//        albumsRecyclerView.setLayoutManager(albumRecylerViewLayoutManger);
     }
 
 
