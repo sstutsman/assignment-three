@@ -2,7 +2,9 @@ package com.example.julio.albumstore;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,8 +13,10 @@ public class MainActivity extends Activity {
 
 
     private RecyclerView albumsRecyclerView;
-    private RecyclerView.adpter albumReyclerViewAdpter;
-    private RecyclerView.LayoutManager albumRecyvlerViewLayoutManger;
+    private RecyclerView.Adapter albumReyclerViewAdpter;
+    private RecyclerView.LayoutManager albumRecylerViewLayoutManger;
+
+    private String[] albums;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,11 @@ public class MainActivity extends Activity {
 
         albumsRecyclerView = (RecyclerView) findViewById(R.id.albumRecycleView);
         albumsRecyclerView.setHasFixedSize(true);
+
+        albumRecylerViewLayoutManger = new LinearLayoutManager(this);
+        albumsRecyclerView.setLayoutManager(albumRecylerViewLayoutManger);
+
+
     }
 
 
