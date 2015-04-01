@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,6 +19,8 @@ import java.util.List;
 public class AlbumRecyclerFragment extends Fragment {
 
     private RecyclerView recyclerAlbums;
+
+    List<Album> albums;
 
 
     public AlbumRecyclerFragment() {
@@ -46,10 +49,27 @@ public class AlbumRecyclerFragment extends Fragment {
         recyclerAlbums.setLayoutManager(layoutManager);
 
         // Creating mock data
-        List<Album> albums;
+        List<Album> albums = mockData();
 
         // Setting adapter
         recyclerAlbums.setAdapter(new AlbumAdapter(albums));
+
+    }
+
+    private List<Album> mockData (){
+        List<Album> albums = new ArrayList<>();
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+                "The Pretty reckless", "12", "Interscope Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+                "The Pretty reckless", "12", "Interscope Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+                "The Pretty reckless", "12", "Interscope Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+                "The Pretty reckless", "12", "Interscope Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+                "The Pretty reckless", "12", "Interscope Records"));
+
+        return albums;
 
     }
 }

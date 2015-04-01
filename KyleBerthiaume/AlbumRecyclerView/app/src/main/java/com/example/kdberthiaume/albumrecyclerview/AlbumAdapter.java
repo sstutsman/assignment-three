@@ -46,7 +46,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvArtist.setText(albums.get(position).getArtist());
         holder.tvTrackAmount.setText(albums.get(position).getTrackCount());
         holder.tvPublisher.setText(albums.get(position).getPub());
-        holder.tvAlbumArt.setImageDrawable(albums.get(position).getCoverArt());
+        holder.ivAlbumArt.setImageDrawable(albums.get(position).getCoverArt());
 
     }
 
@@ -62,7 +62,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         TextView tvAlbum;
         TextView tvTrackAmount;
         TextView tvPublisher;
-        ImageView tvAlbumArt;
+        ImageView ivAlbumArt;
 
 
         // Map views, and assigning listeners in the ViewHolder constructor
@@ -74,10 +74,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvAlbum = (TextView) itemView.findViewById(R.id.tv_album_name);
             tvTrackAmount = (TextView) itemView.findViewById(R.id.tv_track_amount);
             tvPublisher = (TextView) itemView.findViewById(R.id.tv_publisher_name);
-            tvAlbumArt = (ImageView) itemView.findViewById(R.id.iv_album_art);
+            ivAlbumArt = (ImageView) itemView.findViewById(R.id.iv_album_art);
 
             tvAlbum.setOnClickListener(this);
-            tvAlbumArt.setOnClickListener(this);
+            ivAlbumArt.setOnClickListener(this);
         }
 
         @Override

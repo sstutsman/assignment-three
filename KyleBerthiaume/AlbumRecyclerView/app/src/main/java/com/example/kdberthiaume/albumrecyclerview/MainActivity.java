@@ -1,5 +1,8 @@
 package com.example.kdberthiaume.albumrecyclerview;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +15,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Fragment Transaction
+        getFragmentManager().beginTransaction()
+                .replace(R.id.frag_container, new AlbumRecyclerFragment())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
     }
 
 

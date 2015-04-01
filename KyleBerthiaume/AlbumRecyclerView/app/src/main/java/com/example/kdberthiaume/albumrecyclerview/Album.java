@@ -10,10 +10,10 @@ public class Album {
     private Drawable coverArt;
     private String albumName;
     private String artist;
-    private int trackCount;
+    private String trackCount;
     private String publisher;
 
-    public void Album(Drawable art, String albumName, String artist, int trackCount, String pub){
+    public  Album(Drawable art, String albumName, String artist, String trackCount, String pub){
         this.coverArt = art;
         this.albumName = albumName;
         this.artist = artist;
@@ -30,7 +30,7 @@ public class Album {
         return artist;
     }
 
-    public int getTrackCount(){
+    public String getTrackCount(){
         return trackCount;
     }
 

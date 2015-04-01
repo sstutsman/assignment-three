@@ -3,23 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#34DCDD"
-    android:orientation="horizontal"
-    android:padding="@dimen/activity_horizontal_margin">
+    android:orientation="vertical"
+    android:padding="10dp">
 
 
 
     <TextView
+        android:text="Dummy Album"
+        android:textSize="30sp"
+        android:layout_gravity="right"
         android:id="@+id/tv_album_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
+        android:layout_gravity="right"
+        android:text="Dummy Album"
+        android:textSize="30sp"
         android:id="@+id/tv_artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="right" />
 
     <TextView
+        android:layout_gravity="right"
+        android:text="Dummy Album"
+        android:textSize="30sp"
         android:id="@+id/tv_publisher_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -30,7 +39,10 @@
         android:layout_height="wrap_content" />
 
     <ImageView
+        android:layout_gravity="left"
         android:id="@+id/iv_album_art"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/pretty_reckless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
