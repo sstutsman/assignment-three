@@ -51,7 +51,8 @@ public class RecyclerViewFragment extends Fragment {
     private List<Album> mockAlbums() {
 
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album("Skid Row", "Skid Row", "Atlantic", "Rock", "skid_row", 11, 1989));
+        int x = R.drawable.skid_row;
+        albums.add(new Album("Skid Row", "Skid Row", "Atlantic", "Rock", R.drawable.skid_row, 11, 1989));
 
         return albums;
     }//end mockAlbums method

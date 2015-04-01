@@ -13,7 +13,7 @@ public class Album {
 
     private String genre;
 
-    private String albumCoverName;
+    private int albumCoverID;
 
     private int numTracks;
 
@@ -21,13 +21,13 @@ public class Album {
 
 
     public Album(String title, String artist, String publisher, String genre,
-                 String albumCoverName, int numTracks, int year) {
+                 int albumCoverID, int numTracks, int year) {
 
         this.title = title;
         this.artist = artist;
         this.publisher = publisher;
         this.genre = genre;
-        this.albumCoverName = albumCoverName;
+        this.albumCoverID = albumCoverID;
         this.numTracks = numTracks;
         this.year = year;
     }//end Album method
@@ -52,8 +52,8 @@ public class Album {
         return genre;
     }//end getGenre method
 
-    public String getAlbumCoverName() {
-        return albumCoverName;
+    public int getAlbumCoverID() {
+        return albumCoverID;
     }//end getAlbumCoverName
 
     public int getNumTracks() {

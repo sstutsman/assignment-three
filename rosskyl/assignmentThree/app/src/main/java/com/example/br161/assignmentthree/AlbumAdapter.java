@@ -40,15 +40,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        String imageName = albums.get(position).getAlbumCoverName();
-
         holder.tvTitle.setText(albums.get(position).getTitle());
         holder.tvArtist.setText(albums.get(position).getArtist());
         holder.tvGenre.setText(albums.get(position).getGenre());
         holder.tvPublisher.setText(albums.get(position).getPublisher());
         holder.tvNumTracks.setText(albums.get(position).getNumTracks() + " Tracks");
         holder.tvYear.setText(albums.get(position).getYear() + "");
-        holder.albumCover.setImageDrawable(Drawable.createFromPath(imageName));
+        holder.albumCover.setImageResource(albums.get(position).getAlbumCoverID());
         //TODO fix the image path
     }//end onBindViewHolder method
 
