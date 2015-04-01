@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_album"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
@@ -7,8 +8,8 @@
 
     <ImageView
         android:id="@+id/image_album_cover"
-        android:layout_width="@dimen/album_cover_height"
-        android:layout_height="@dimen/album_cover_width"
+        android:layout_width="@dimen/album_cover_thumb"
+        android:layout_height="@dimen/album_cover_thumb"
         android:layout_margin="@dimen/margin_picture"
         android:src="@drawable/skid_row" />
 
@@ -26,6 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="title" />
 
             <TextView
@@ -33,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="publisher"/>
 
             <TextView
@@ -40,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="genre"/>
 
         </LinearLayout>
@@ -53,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="artist" />
 
             <TextView
@@ -60,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="year"/>
 
             <TextView
@@ -67,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
                 android:text="numTracks"/>
 
         </LinearLayout>

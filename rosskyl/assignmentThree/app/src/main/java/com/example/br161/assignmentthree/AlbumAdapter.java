@@ -1,11 +1,12 @@
 package com.example.br161.assignmentthree;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -24,14 +25,23 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // This line inflates the layout which will be repeated
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_album, parent, false);
-        // We create an instance of our ViewHolder so we can handle click events.
+
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                // We can handle click events in here, but only if we have
-                // registered the listeners in the ViewHolder
+
+                Intent intent = new Intent(view.getContext(), AlbumView.class);
+
+                intent.putExtra("albumCoverID", albums.get(position).getAlbumCoverID());
+                intent.putExtra("artist", albums.get(position).getArtist());
+                intent.putExtra("genre", albums.get(position).getGenre());
+                intent.putExtra("numTracks", albums.get(position).getNumTracks());
+                intent.putExtra("publisher", albums.get(position).getPublisher());
+                intent.putExtra("title", albums.get(position).getTitle());
+                intent.putExtra("year", albums.get(position).getYear());
+
+                view.getContext().startActivity(intent);
             }//end onItemClick
         });//end ViewHolder viewHolder = new ViewHolder
         return viewHolder;
@@ -47,7 +57,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvNumTracks.setText(albums.get(position).getNumTracks() + " Tracks");
         holder.tvYear.setText(albums.get(position).getYear() + "");
         holder.albumCover.setImageResource(albums.get(position).getAlbumCoverID());
-        //TODO fix the image path
     }//end onBindViewHolder method
 
     @Override
@@ -75,6 +84,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
         TextView tvYear;
 
+        LinearLayout item_album;
+
         // We map our views, and assign listeners in the ViewHolder constructor
         public ViewHolder(View itemView, ItemClickListener listener) {
             super(itemView);
@@ -87,8 +98,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvGenre = (TextView) itemView.findViewById(R.id.tv_genre);
             tvNumTracks = (TextView) itemView.findViewById(R.id.tv_num_tracks);
             tvYear = (TextView) itemView.findViewById(R.id.tv_year);
+            item_album = (LinearLayout) itemView.findViewById(R.id.item_album);
 
-            albumCover.setOnClickListener(this);
+            item_album.setOnClickListener(this);
         }//end ViewHolder method
 
         // This method is just to pass on the onClick event to our individual items! Neat!
@@ -96,7 +108,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         public void onClick(View view) {
 
             listener.onItemClick(view, getPosition());
-        }
+        }//end onClick method
 
         // This is the interface which forces our Adapter to implement the OnClickListener
         public interface ItemClickListener {
