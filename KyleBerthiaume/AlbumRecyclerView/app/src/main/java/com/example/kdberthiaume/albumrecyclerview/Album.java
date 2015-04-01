@@ -21,4 +21,24 @@ public class Album {
         this.publisher = pub;
 
     }
+
+    public String getAlbumName(){
+        return albumName;
+    }
+
+    public String getArtist(){
+        return artist;
+    }
+
+    public int getTrackCount(){
+        return trackCount;
+    }
+
+    public String getPub(){
+        return publisher;
+    }
+
+    public Drawable getCoverArt(){
+        return coverArt;
+    }
 }

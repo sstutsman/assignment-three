@@ -49,8 +49,7 @@ public class AlbumRecyclerFragment extends Fragment {
         List<Album> albums;
 
         // Setting adapter
-
-
+        recyclerAlbums.setAdapter(new AlbumAdapter(albums));
 
     }
 }
