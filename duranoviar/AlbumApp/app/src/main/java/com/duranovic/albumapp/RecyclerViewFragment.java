@@ -17,7 +17,7 @@ import java.util.List;
 
 public class RecyclerViewFragment extends Fragment {
 
-    private RecyclerView recyclerContacts;
+    private RecyclerView recyclerAlbums;
 
     public RecyclerViewFragment() {
     }
@@ -34,18 +34,18 @@ public class RecyclerViewFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Map our view
-        recyclerContacts = (RecyclerView) view.findViewById(R.id.recycler_contacts);
+        recyclerAlbums = (RecyclerView) view.findViewById(R.id.recycler_contacts);
 
         // Every RecyclerView needs a LayoutManager. Notice that it's an inner class.
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         // Don't forget to set the manager on your RecyclerView!
-        recyclerContacts.setLayoutManager(layoutManager);
+        recyclerAlbums.setLayoutManager(layoutManager);
 
         // create data
         List<Album> albums = mockAlbums();
 
         // set the adapter
-        recyclerContacts.setAdapter(new AlbumAdapter(albums));
+        recyclerAlbums.setAdapter(new AlbumAdapter(albums));
     }
 
     private List<Album> mockAlbums() {

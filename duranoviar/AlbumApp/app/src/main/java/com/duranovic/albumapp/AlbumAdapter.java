@@ -39,7 +39,14 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     @Override
     // This method assigns the values from the contacts list we passed in to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvDescription.setText(albums.get(position).getName());
+
+        // set the description text
+        holder.tvDescription.setText(albums.get(position).getName() + "\n" +
+                albums.get(position).getArtist() + "\n" +
+                        albums.get(position).getYear() + "\n" +
+                        albums.get(position).getTrackCount() + " tracks" + "\n" +
+                        albums.get(position).getPublisher() + "\n"
+        );
     }
 
     @Override
