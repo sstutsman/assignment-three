@@ -13,9 +13,9 @@ public class CDAlbum {
     private String albumPublisher;
     private String albumGenre;
     private Drawable albumCover;
-    private String ;
-    private String ;
-    private String ;
+    private String something;
+    private String something2;
+    private String something3;
 
 
 

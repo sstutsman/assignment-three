@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Peter Thompson on 3/30/2015.
  */
@@ -19,17 +22,26 @@ public class RecyclerViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState )
     {
-        return inflater.inflate(R.layout.SOMETHING_HERE, container, false);
+        return inflater.inflate(R.layout.item_albumlisting_brief, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-        recyclerAlbums = (RecyclerView) view.findViewById(R.id.SOMETHINGE_ELSE_HERE);
+        //Links it to Recycler View created in file: fragment_recycler_view.xml
+        recyclerAlbums = (RecyclerView) view.findViewById(R.id.recycler_oneAlbumBrief);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerAlbums.setLayoutManager(layoutManager);
 
+        List<CDAlbum> myCollection = importAlbums();
+        recyclerAlbums.setAdapter(new CDAdapter());
+
     }
+}
+
+private List<CDAlbum> importAlbums() {
+    List<CDAlbum> myCollection = new ArrayList<>();
+
 }
