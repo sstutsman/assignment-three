@@ -4,12 +4,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.julio.albumstore.SpotifyWebLogInActivity">
+    tools:context="com.example.julio.albumstore.firstActivity">
 
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/webView"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LogIn Spotify"
+        android:id="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true" />
 </RelativeLayout>

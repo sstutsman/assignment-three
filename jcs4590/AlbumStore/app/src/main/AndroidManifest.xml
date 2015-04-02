@@ -13,18 +13,42 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+
+
         </activity>
+
+
         <activity
             android:name=".SpotifyWebLogInActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_spotify_web_log_in"
-            android:theme="@style/FullscreenTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@android:style/Theme.NoTitleBar" >
 
+        </activity>
+
+
+
+        <activity
+            android:name=".firstActivity"
+            android:label="@string/title_activity_first" >
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="topalbums" android:scheme="http" />
             </intent-filter>
         </activity>
+
+
+
+
+
     </application>
 
 </manifest>

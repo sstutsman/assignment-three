@@ -1,17 +1,29 @@
 package com.example.julio.albumstore;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+
 
 
 public class SpotifyWebLogInActivity extends Activity {
+
+    private WebView webview;
+    private static final String authUrl = "http://accounts.spotify.com/authorize?client_id=6b7e14da031f4d72b6a3301c262f5647&response_type=code&redirect_uri=http://topalbums";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spotify_web_log_in2);
+
+
+            webview = (WebView) findViewById(R.id.webView);
+            webview.loadUrl(authUrl);
+
     }
 
 
