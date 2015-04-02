@@ -58,16 +58,16 @@ public class AlbumRecyclerFragment extends Fragment {
 
     private List<Album> mockData (){
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
+        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless2), "Going to Hell",
                 "The Pretty reckless", "12", "Interscope Records"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
-                "The Pretty reckless", "12", "Interscope Records"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
-                "The Pretty reckless", "12", "Interscope Records"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
-                "The Pretty reckless", "12", "Interscope Records"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless), "Going to Hell",
-                "The Pretty reckless", "12", "Interscope Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.avenged_sevenfold), "Hail to the King",
+                "Avenged Sevenfold", "10", "Warner Bros."));
+        albums.add(new Album(getResources().getDrawable(R.drawable.charlie_hunt), "Steady Groovin",
+                "Charlie Hunt", "12", "Blue Note Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.three_years_hollow), "The Cracks",
+                "Three Years Hollow", "12", "Imagine Records"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.romantic_rebel), "Romantic Rebel",
+                "Romantic Rebel", "11", "Interscope Records"));
 
         return albums;
 

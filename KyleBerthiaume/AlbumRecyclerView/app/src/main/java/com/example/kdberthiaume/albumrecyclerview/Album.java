@@ -16,8 +16,8 @@ public class Album {
     public  Album(Drawable art, String albumName, String artist, String trackCount, String pub){
         this.coverArt = art;
         this.albumName = albumName;
-        this.artist = artist;
-        this.trackCount = trackCount;
+        this.artist = "By: " + artist;
+        this.trackCount = "Track count: " + trackCount;
         this.publisher = pub;
 
     }
