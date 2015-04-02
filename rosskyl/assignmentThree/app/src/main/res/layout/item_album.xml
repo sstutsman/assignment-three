@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
+    android:background="@color/bg_item_album"
     android:orientation="horizontal">
 
     <ImageView
@@ -11,7 +12,7 @@
         android:layout_width="@dimen/album_cover_thumb"
         android:layout_height="@dimen/album_cover_thumb"
         android:layout_margin="@dimen/margin_picture"
-        android:src="@drawable/skid_row" />
+        android:src="@drawable/ic_launcher" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -30,6 +31,7 @@
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
                 android:maxWidth="175dp"
+                android:textColor="@color/text_item_album"
                 android:text="title" />
 
             <TextView
@@ -38,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_item_album"
                 android:text="numTracks"/>
 
         </LinearLayout>
@@ -54,6 +57,7 @@
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
                 android:maxWidth="175dp"
+                android:textColor="@color/text_item_album"
                 android:text="artist" />
 
             <TextView
@@ -62,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_item_album"
                 android:text="year"/>
 
         </LinearLayout>
@@ -78,6 +83,7 @@
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
                 android:maxWidth="150dp"
+                android:textColor="@color/text_item_album"
                 android:text="publisher"/>
 
             <TextView
@@ -87,6 +93,7 @@
                 android:padding="@dimen/padding_text"
                 android:textSize="@dimen/text_size_small"
                 android:maxWidth="150dp"
+                android:textColor="@color/text_item_album"
                 android:text="genre"/>
 
         </LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bg_main">#009</color>
+    <color name="bg_item_album">#00C</color>
+
+    <color name="text_main">#9FF</color>
+    <color name="text_item_album">#9FF</color>
+</resources>

@@ -7,8 +7,8 @@
 
     <dimen name="margin_picture">2.5dp</dimen>
 
-    <dimen name="album_cover_thumb">75dp</dimen>
-    <dimen name="album_cover_large">100dp</dimen>
+    <dimen name="album_cover_thumb">85dp</dimen>
+    <dimen name="album_cover_large">125dp</dimen>
 
     <dimen name="text_size_small">15sp</dimen>
     <dimen name="text_size_large">25sp</dimen>
