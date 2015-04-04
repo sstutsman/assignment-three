@@ -39,11 +39,11 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.ivCover.setImageDrawable(albums.get(position).getCover());
-        holder.tvName.setText("Title: "+albums.get(position).getName());
-        holder.tvArtist.setText("Artist: "+albums.get(position).getArtist());
-        holder.tvTrackCount.setText("Track Count: "+albums.get(position).getTrackCount());
-        holder.tvYear.setText("Year: "+albums.get(position).getYear());
-        holder.tvPublisher.setText("Publisher(s): "+albums.get(position).getPublisher());
+        holder.tvName.setText(albums.get(position).getName());
+        holder.tvArtist.setText(albums.get(position).getArtist());
+        holder.tvTrackCount.setText(albums.get(position).getTrackCount()+" tracks");
+        holder.tvYear.setText("Released in "+albums.get(position).getYear());
+        holder.tvPublisher.setText("Published by "+albums.get(position).getPublisher());
     }
 
     @Override
