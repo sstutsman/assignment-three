@@ -1,5 +1,7 @@
 package com.example.elise.assignment_three;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * Created by Elise on 3/30/2015.
  */
-public class AlbumAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
+public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
 
     List<Album> albums;
 
@@ -22,9 +24,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext().inflate(R.layout.item_album,parent,false));
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_album, parent, false);
 
-        RecyclerView.ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
+        ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
+            @Override
             public void onItemClick(View view, int position){
 
             }
@@ -35,8 +38,12 @@ public class AlbumAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.ivAlbum.setDrawable();
-
+        holder.ivCover.setImageDrawable(albums.get(position).getCover());
+        holder.tvName.setText("Title: "+albums.get(position).getName());
+        holder.tvArtist.setText("Artist: "+albums.get(position).getArtist());
+        holder.tvTrackCount.setText("Track Count: "+albums.get(position).getTrackCount());
+        holder.tvYear.setText("Year: "+albums.get(position).getYear());
+        holder.tvPublisher.setText("Publisher(s): "+albums.get(position).getPublisher());
     }
 
     @Override
