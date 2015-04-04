@@ -52,26 +52,66 @@ public class RecyclerViewFragment extends Fragment {
     private List<Album> mockAlbums() {
         // Creates a list of Contacts and fills them up with data
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey), "Title1",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title2",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title3",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title4",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title5",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title6",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title7",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title8",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title9",
-                "Artist", "15", "1987","Publisher"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.monkey),"Title10",
-                "Artist", "15", "1987","Publisher"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.darkside),
+                "Dark Side of the Moon",
+                "Pink Floyd",
+                "10",
+                "1973",
+                "Harvest"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.poison1),
+                "Open Up and Say... Ahh!",
+                "Poison",
+                "10",
+                "1988",
+                "Enigma"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.rsz_wslide),
+                "Slide It In",
+                "Whitesnake",
+                "10",
+                "1984",
+                "Warner Bros."));
+        albums.add(new Album(getResources().getDrawable(R.drawable.philc),
+                "No Jacket Required",
+                "Phil Collins",
+                "10",
+                "1985",
+                "Atlantic"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.u2),
+                "The Joshua Tree",
+                "U2",
+                "11",
+                "1987",
+                "Island"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.googoo),
+                "Dizzy Up the Girl",
+                "Goo Goo Dolls",
+                "13",
+                "1988",
+                "Warner Bros."));
+        albums.add(new Album(getResources().getDrawable(R.drawable.thepolice),
+                "Synchronicity",
+                "The Police",
+                "10",
+                "1987",
+                "A&M"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.toto),
+                "Toto IV",
+                "Toto",
+                "10",
+                "1982",
+                "Columbia"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.kansas),
+                "Leftoverture",
+                "Kansas",
+                "8",
+                "1976",
+                "Kirshner"));
+        albums.add(new Album(getResources().getDrawable(R.drawable.styx),
+                "The Grand Illusion",
+                "Styx",
+                "8",
+                "1977",
+                "A&M"));
 
         return albums;
     }

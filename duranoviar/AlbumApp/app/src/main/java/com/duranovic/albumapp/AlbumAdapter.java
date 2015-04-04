@@ -1,5 +1,6 @@
 package com.duranovic.albumapp;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -87,6 +88,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         // This is the interface which forces our Adapter to implement the OnClickListener
         public interface ItemClickListener {
             void onItemClick(View view, int position);
+
+            
         }
     }
 
