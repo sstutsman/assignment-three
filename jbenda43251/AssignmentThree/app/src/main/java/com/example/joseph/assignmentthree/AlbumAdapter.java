@@ -37,10 +37,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                 Intent intent = new Intent(main, AlbumActivity.class);
                 intent.putExtra("name", albums.get(position).getName());
                 intent.putExtra("artist", albums.get(position).getArtist());
-                intent.putExtra("track_count", albums.get(position).getTrack_count());
-                intent.putExtra("year", albums.get(position).getYear());
+                intent.putExtra("track_count", Integer.toString(albums.get(position).getTrack_count()));
+                intent.putExtra("year", Integer.toString(albums.get(position).getYear()));
                 intent.putExtra("publisher", albums.get(position).getPublisher());
-                intent.putExtra("cover", albums.get(position).getCover_art());
+                intent.putExtra("cover", Integer.toString(albums.get(position).getCover_art()));
                 main.startActivity(intent);
             }
         });
@@ -72,11 +72,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         TextView tvYear;
         TextView tvPubliser;
         ImageView ivCover;
+        LinearLayout lay;
 
 
         public ViewHolder(View itemView, ItemClickListener listener) {
             super(itemView);
             this.listener = listener;
+            lay = (LinearLayout) itemView.findViewById(R.id.ly_thelayout);
             tvName = (TextView) itemView.findViewById(R.id.tv_name);
             tvArtist = (TextView) itemView.findViewById(R.id.tv_artist);
             tvTrack_count = (TextView) itemView.findViewById(R.id.tv_track_count);
@@ -84,8 +86,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvPubliser = (TextView) itemView.findViewById(R.id.tv_publisher);
             ivCover = (ImageView) itemView.findViewById(R.id.iv_cover_art);
 
-            tvName.setOnClickListener(this);
-            tvArtist.setOnClickListener(this);
+            lay.setOnClickListener(this);
+            //tvName.setOnClickListener(this);
+           //tvArtist.setOnClickListener(this);
         }
 
         @Override

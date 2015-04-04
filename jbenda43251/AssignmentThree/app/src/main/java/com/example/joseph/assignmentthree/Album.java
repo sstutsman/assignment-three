@@ -1,5 +1,7 @@
 package com.example.joseph.assignmentthree;
 
+import java.util.List;
+
 /**
  * Created by Joseph on 3/30/2015.
  */
@@ -7,6 +9,7 @@ public class Album {
     private String name;
     private String artist;
     private String publisher;
+    private List<String> genres;
     private int track_count;
     private int year;
     private int cover_art;
@@ -33,6 +36,14 @@ public class Album {
 
     public void setCover_art(int cover_art) {
         this.cover_art = cover_art;
+    }
+
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
+    }
+
+    public List<String> getGenres() {
+        return genres;
     }
 
     public String getName() {
