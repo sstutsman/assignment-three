@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/tile_bkg"
+    >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/tile_title"
+        android:text="Chief - Eric Church"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:textSize="14dp"
+        android:capitalize="characters" />
+
+    <ImageView
+        android:id="@+id/coverArt"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/echurch"
+        />
+
+    <TextView
+        android:id="@+id/txtAlbumName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chief"
+        android:textColor="@color/blue"
+        android:gravity="center_vertical"
+        android:textSize="25sp"
+        android:layout_below="@id/title"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="150dp"
+        android:capitalize="characters" />
+
+    <TextView
+        android:id="@+id/txtArtistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eric Church"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_below="@id/txtAlbumName"
+        android:layout_marginTop="5dp"
+        android:layout_alignStart="@id/txtAlbumName"
+        />
+
+    <TextView
+        android:id="@+id/txtTrackCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11 Tracks"
+        android:gravity="center_vertical"
+        android:textSize="15sp"
+        android:layout_below="@id/txtArtistName"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@id/txtArtistName"
+        />
+
+    <TextView
+        android:id="@+id/txtPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Columbia Records"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="#404040"
+        android:layout_below="@id/coverArt"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@id/coverArt"
+        />
+
+    <TextView
+        android:id="@+id/txtYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(2011)"
+        android:gravity="center_vertical"
+        android:textColor="#A9A9A9"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBaseline="@+id/txtAlbumName"
+        android:layout_toRightOf="@+id/txtAlbumName"
+        />
+
+</RelativeLayout>
