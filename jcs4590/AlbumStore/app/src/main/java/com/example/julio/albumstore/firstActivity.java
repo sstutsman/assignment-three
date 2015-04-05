@@ -1,7 +1,9 @@
 package com.example.julio.albumstore;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,17 +12,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class firstActivity extends Activity {
 
     protected Button logInButton;
     private Uri uriData;
-    private User currentUser;
-
+    private SharedPreferences userData;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+
+        userData = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        editor = userData.edit();
+
+
         logInButton = (Button) findViewById(R.id.button);
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,9 +48,10 @@ public class firstActivity extends Activity {
         uriData = getIntent().getData();
         if(uriData != null){
             String authCode = uriData.getQueryParameter("code").toString();
-            currentUser = new User("No Name",authCode);
-
-            Log.w("Lakers",uriData.getQueryParameter("code").toString());
+            editor.putString("userAuthCode",authCode);
+            editor.commit();
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i,null);
 
 
         }
