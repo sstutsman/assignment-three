@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="@color/tile_bkg"
-        android:scrollbars="vertical"
-        android:smoothScrollbar="true">
+        android:scrollbars="vertical">
 
         <TextView
             android:id="@+id/title"

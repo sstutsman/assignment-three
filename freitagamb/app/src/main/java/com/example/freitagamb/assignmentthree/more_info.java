@@ -1,36 +1,21 @@
 package com.example.freitagamb.assignmentthree;
 
-        import android.content.Intent;
-        import android.support.v7.app.ActionBarActivity;
-        import android.os.Bundle;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.TextView;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 
-public class more_info extends ActionBarActivity {
-
+public class more_info extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.more_info);/*
-        String sum = getIntent().getStringExtra("sum");
-        String ave = getIntent().getStringExtra("ave");
-        TextView ans = (TextView)findViewById(R.id.answer);
-        TextView average = (TextView)findViewById(R.id.ave);
-        average.setText(ave);
-        ans.setText(sum);
-
-        TextView backBtn;
-        backBtn = (TextView) findViewById(R.id.try_again);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(intent, 0);
-            }
-        });*/
+        setContentView(R.layout.more_info);
+      //  String pos = getIntent().getStringExtra("pos");
+        String artist = getIntent().getStringExtra("artist");
+        TextView txtArtist = (TextView)findViewById(R.id.txtArtistName);
+        txtArtist.setText(artist);
     }
 
 

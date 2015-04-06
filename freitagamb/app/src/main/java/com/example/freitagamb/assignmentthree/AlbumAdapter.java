@@ -11,12 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder> {
 
-    private List<AlbumInfo> albumList;
+    protected List<AlbumInfo> albumList;
     public AlbumAdapter(List<AlbumInfo> albumList) {
         this.albumList = albumList;
     }
@@ -70,13 +69,15 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
             cv = (CardView) itemView.findViewById(R.id.card_view);
             cv.setOnClickListener(this);
         }
-
-        @Override
         public void onClick(View v) {
-            Toast.makeText(v.getContext(), "item clicked at " + getPosition(),Toast.LENGTH_SHORT).show();
-         //   Intent intent = new Intent(v.getContext(), more_info.class);
-         //   intent.putExtra("pos", getPosition());
-         //   startActivityForResult(intent, 0);
+            Context context = v.getContext();
+            Toast.makeText(context, "item clicked at " + getPosition(),Toast.LENGTH_SHORT).show();
+            Intent intObj = new Intent(context,more_info.class);
+            intObj.putExtra("pos", getPosition());
+            intObj.putExtra("artist", albumList.get(getPosition()).artist);
+            context.startActivity(intObj);
         }
+
     }
+
 }
