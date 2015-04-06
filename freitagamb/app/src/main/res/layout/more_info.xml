@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/tile_bkg"
+    android:scrollbars="vertical"
+    android:paddingLeft="30sp"
+    android:paddingRight="30sp">
+
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="20dp">
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/coverArt"
+            android:src="@drawable/echurch"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtAlbumName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chief"
+        android:layout_marginRight="5sp"
+        android:textColor="@color/blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/txtYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(2011)"
+        android:textColor="#A9A9A9"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/txtArtistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eric Church"
+        android:textSize="18sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Columbia Records"
+        android:gravity="center_vertical"
+        android:textSize="12sp"
+        android:textColor="#A9A9A9"
+        android:layout_marginLeft="5dp"/>
+    <TextView
+        android:id="@+id/txtTrackCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11 Tracks on disc"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+        android:layout_marginTop="11dp"/>
+</LinearLayout>

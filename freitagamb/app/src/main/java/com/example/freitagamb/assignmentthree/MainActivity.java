@@ -2,18 +2,17 @@ package com.example.freitagamb.assignmentthree;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends Activity {
     private RecyclerView rv;
-    private List<AlbumInfo> albums;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,25 +25,12 @@ public class MainActivity extends Activity {
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
-        initializeData();
         initializeAdapter();
     }
-    private void initializeData(){
-        albums=new ArrayList<>();
-        albums.add(new AlbumInfo(R.drawable.echurch,"Eric Church", "Chief", 11, 2011, "EMI Nashville"));
-        albums.add(new AlbumInfo(R.drawable.fsinatra,"Frank Sinatra", "Come Fly With Me", 13, 1958, "Capitol Records"));
-        albums.add(new AlbumInfo(R.drawable.bjoel,"Billy Joel", "Piano Man", 10, 1973, "Columbia"));
-        albums.add(new AlbumInfo(R.drawable.gmichael,"George Michael", "Faith", 11, 1987, "Epic Records"));
-        albums.add(new AlbumInfo(R.drawable.alexsierra,"Alex & Sierra", "It's About Us", 15, 2014, "Sony"));
-        albums.add(new AlbumInfo(R.drawable.genisis,"Genisis", "Invisible Man", 8, 1986, "Atlantic Records"));
-        albums.add(new AlbumInfo(R.drawable.nirvana,"Nirvana", "Nevermind", 12, 1991, "DGC Records ORG"));
-        albums.add(new AlbumInfo(R.drawable.queen,"Queen", "News of the World", 11, 1977, "EMI"));
-        albums.add(new AlbumInfo(R.drawable.ncole,"Nat King Cole", "Love Is the Thing", 12, 1957, "Capitol Records"));
-        albums.add(new AlbumInfo(R.drawable.halestorm,"Halestorm", "Into the Wild Life", 15, 2015, "Atlanta Records"));
-    }
+
 
     private void initializeAdapter(){
-        AlbumAdapter adapter = new AlbumAdapter(albums);
+        AlbumAdapter adapter = new AlbumAdapter(AlbumInfo.setData());
         rv.setAdapter(adapter);
     }
     @Override
