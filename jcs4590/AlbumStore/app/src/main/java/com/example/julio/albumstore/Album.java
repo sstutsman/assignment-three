@@ -144,6 +144,95 @@ public class Album {
         private int track_number;
         private String uri;
 
+        public Track() {
+        }
+
+        public Track(Artist[] artists, int duration_ms, Boolean explicit, String href, String id, String name, String preview_url, int track_number, String uri) {
+
+            this.artists = artists;
+            this.duration_ms = duration_ms;
+            this.explicit = explicit;
+            this.href = href;
+            this.id = id;
+            this.name = name;
+            this.preview_url = preview_url;
+            this.track_number = track_number;
+            this.uri = uri;
+        }
+
+        public Artist[] getArtists() {
+
+            return artists;
+        }
+
+        public void setArtists(Artist[] artists) {
+            this.artists = artists;
+        }
+
+        public int getDuration_ms() {
+            return duration_ms;
+        }
+
+        public void setDuration_ms(int duration_ms) {
+            this.duration_ms = duration_ms;
+        }
+
+        public Boolean getExplicit() {
+            return explicit;
+        }
+
+        public void setExplicit(Boolean explicit) {
+            this.explicit = explicit;
+        }
+
+        public String getHref() {
+            return href;
+        }
+
+        public void setHref(String href) {
+            this.href = href;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPreview_url() {
+            return preview_url;
+        }
+
+        public void setPreview_url(String preview_url) {
+            this.preview_url = preview_url;
+        }
+
+        public int getTrack_number() {
+            return track_number;
+        }
+
+        public void setTrack_number(int track_number) {
+            this.track_number = track_number;
+        }
+
+        public String getUri() {
+            return uri;
+        }
+
+        public void setUri(String uri) {
+            this.uri = uri;
+        }
+
         @Override
         public String toString() {
             return "Track{" +

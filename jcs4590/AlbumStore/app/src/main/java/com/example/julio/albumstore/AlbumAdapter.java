@@ -2,9 +2,11 @@ package com.example.julio.albumstore;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.net.URL;
@@ -55,12 +58,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
             cardView.setOnClickListener(this);
             imageView.setOnClickListener(this);
             artistView.setOnClickListener(this);
+            nameView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            Toast toast = Toast.makeText(v.getContext(), ""+getPosition(),Toast.LENGTH_SHORT);
-            toast.show();
+            Gson gson = new Gson();
+            String albumString = gson.toJson(albumList.get(getPosition()));
+            Intent intent = new Intent(v.getContext(), AlbumDetailActivity.class);
+            intent.putExtra("album",albumString);
+            v.getContext().startActivity(intent);
         }
     }
 
@@ -117,13 +124,13 @@ return new AlbumViewHolder(view);
         Picasso.with(albumViewHolder.imageView.getContext()).load(album.getImages()[0].getUrl()).into(albumViewHolder.imageView);
 
 
-        albumViewHolder.nameView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(v.getContext(), ""+i,Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
+//        albumViewHolder.nameView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast toast = Toast.makeText(v.getContext(), ""+i,Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
     }
 
 

@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.util.LogWriter;
 import android.support.v7.widget.*;
 
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -77,6 +79,8 @@ public class MainActivity  extends Activity {
     private String userToken;
     private CurrentSession currentSession;
     private Map<String, Object> albumsMap;
+    private HttpResponse response;
+
 
 
     private String[] albums;
@@ -132,13 +136,14 @@ public class MainActivity  extends Activity {
 
 
             httpClient = new DefaultHttpClient();
-            HttpResponse response;
             HttpPost httpPost = new HttpPost(params[0]);
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             nameValuePairs.add(new BasicNameValuePair("grant_type", "authorization_code"));
             String userCode = userData.getString("userAuthCode", null);
             String authHeader = clientID + ":" + clientSecret;
             HttpEntity tokenEnity;
+            String responseString;
+            userToken = userData.getString("userToken",null);
 
 
             nameValuePairs.add(new BasicNameValuePair("code", userCode));
@@ -159,63 +164,87 @@ public class MainActivity  extends Activity {
 
 
             try {
-                response = httpClient.execute(httpPost);
-                tokenEnity = response.getEntity();
-                String responseString = EntityUtils.toString(tokenEnity).replace("{", "");
-                responseString = responseString.replace("}", "");
-                userToken = responseString.split(",")[0].split(":")[1].replace("\"", "");
-                currentSession.setAuthToken(userToken);
-
-                HttpGet httpGet = new HttpGet("https://api.spotify.com/v1/browse/new-releases");
-                String bearer = String.format("Bearer %s", userToken);
-                httpGet.setHeader("Authorization", bearer);
-
-                response = httpClient.execute(httpGet);
-                HttpEntity albumResponseEntity = response.getEntity();
-                responseString = EntityUtils.toString(albumResponseEntity);
+                if(userToken == null) {
+                    response = httpClient.execute(httpPost);
+                    tokenEnity = response.getEntity();
+                     responseString = EntityUtils.toString(tokenEnity).replace("{", "");
+                    responseString = responseString.replace("}", "");
+                    userToken = responseString.split(",")[0].split(":")[1].replace("\"", "");
+                    currentSession.setAuthToken(userToken);
+                    SharedPreferences.Editor editor = userData.edit();
+                    editor.putString("userToken", userToken);
+                    editor.commit();
 
 
-                JsonParser parser = new JsonParser();
-                JsonObject obj = parser.parse(responseString).getAsJsonObject();
-                int albumsNumber = obj.get("albums").getAsJsonObject().get("items").getAsJsonArray().size();
-                Uri[] albumUrlArray = new Uri[20];
-                String albumIDString = "";
-                for (int i = 0; i < albumUrlArray.length; i++) {
 
-                    albumUrlArray[i] = Uri.parse(obj.get("albums").getAsJsonObject().get("items").getAsJsonArray()
-                            .get(i).getAsJsonObject().get("href").toString().replace("\"", ""));
-                    if (i == 19)
-                    {
-                        albumIDString += albumUrlArray[i].getLastPathSegment();
-                    }else {
-                        albumIDString += albumUrlArray[i].getLastPathSegment() + ",";
-                    }
+                    getNewReleases();
+                }
+                else{
+
+                    getNewReleases();
 
                 }
-                albumIDString = albumIDString.replaceAll(" , $", "");
 
 
-                httpGet.setURI(new URI("https://api.spotify.com/v1/albums?ids=" + albumIDString));
-                response = httpClient.execute(httpGet);
-                albumResponseEntity = response.getEntity();
-                responseString = EntityUtils.toString(albumResponseEntity);
 
 
-                responseString = parser.parse(responseString).getAsJsonObject().get("albums").toString();
-
-                Gson gson = new Gson();
-                currentSession.setAllAlbums(gson.fromJson(responseString, Album[].class));
-
-
-            } catch (ClientProtocolException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (URISyntaxException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
+
             return currentSession.getAllAlbums();
+        }
+
+        private void getNewReleases() {
+
+try {
+
+
+    HttpGet httpGet = new HttpGet("https://api.spotify.com/v1/browse/new-releases");
+    String bearer = String.format("Bearer %s", userToken);
+    httpGet.setHeader("Authorization", bearer);
+
+
+    response = httpClient.execute(httpGet);
+    HttpEntity albumResponseEntity = response.getEntity();
+    String responseString = EntityUtils.toString(albumResponseEntity);
+
+
+
+    JsonParser parser = new JsonParser();
+    JsonObject obj = parser.parse(responseString).getAsJsonObject();
+    int albumsNumber = obj.get("albums").getAsJsonObject().get("items").getAsJsonArray().size();
+    Uri[] albumUrlArray = new Uri[20];
+    String albumIDString = "";
+    for (int i = 0; i < albumUrlArray.length; i++) {
+
+        albumUrlArray[i] = Uri.parse(obj.get("albums").getAsJsonObject().get("items").getAsJsonArray()
+                .get(i).getAsJsonObject().get("href").toString().replace("\"", ""));
+        if (i == 19) {
+            albumIDString += albumUrlArray[i].getLastPathSegment();
+        } else {
+            albumIDString += albumUrlArray[i].getLastPathSegment() + ",";
+        }
+
+    }
+    albumIDString = albumIDString.replaceAll(" , $", "");
+
+
+    httpGet.setURI(new URI("https://api.spotify.com/v1/albums?ids=" + albumIDString));
+    response = httpClient.execute(httpGet);
+    albumResponseEntity = response.getEntity();
+    responseString = EntityUtils.toString(albumResponseEntity);
+
+
+    responseString = parser.parse(responseString).getAsJsonObject().get("albums").toString();
+
+    Gson gson = new Gson();
+    currentSession.setAllAlbums(gson.fromJson(responseString, Album[].class));
+}catch (Exception e){
+    e.printStackTrace();
+}
+
         }
 
         @Override

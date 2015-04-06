@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AlbumStore</string>
+    <string name="app_name">Spotify New Releases</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
 
     <string name="title_activity_spotify_web_log_in">SpotifyWebLogInActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_first">firstActivity</string>
+    <string name="title_activity_album_detail"></string>
 
 </resources>

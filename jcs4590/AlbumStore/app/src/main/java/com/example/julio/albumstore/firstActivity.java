@@ -47,7 +47,7 @@ public class firstActivity extends Activity {
         super.onStart();
         uriData = getIntent().getData();
         if(uriData != null){
-            String authCode = uriData.getQueryParameter("code").toString();
+            String authCode = uriData.getQueryParameter("code");
             editor.putString("userAuthCode",authCode);
             editor.commit();
             Intent i = new Intent(getApplicationContext(),MainActivity.class);

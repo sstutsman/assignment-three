@@ -4,8 +4,7 @@
     android:paddingRight="2dp"
 
     android:paddingTop="2dp"
-    android:paddingBottom="2dp" tools:context=".MainActivity"
-    android:background="#ff468185">
+    android:paddingBottom="2dp" tools:context=".MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/albumRecycleView"
