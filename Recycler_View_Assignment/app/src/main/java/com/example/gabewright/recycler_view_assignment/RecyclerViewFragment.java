@@ -36,6 +36,7 @@ public class RecyclerViewFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerAlbum.setLayoutManager(layoutManager);
         List<Album> albums = mockAlbums();
+        recyclerAlbum.setAdapter(new AlbumAdapter(albums));
     }
 
     private List<Album> mockAlbums(){
