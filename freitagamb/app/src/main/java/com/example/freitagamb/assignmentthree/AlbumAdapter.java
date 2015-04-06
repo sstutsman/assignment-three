@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.Collections;
 import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder> {
@@ -21,7 +20,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     @Override
     public void onBindViewHolder(AlbumViewHolder holder, int i) {
         AlbumInfo current = albumList.get(i);
-        holder.title.setText(current.album);
+        holder.title.setText(current.artist + " - " + current.album);
         holder.coverArt.setImageResource(current.artID);
         holder.artistName.setText(current.artist);
         holder.albumName.setText(current.album);

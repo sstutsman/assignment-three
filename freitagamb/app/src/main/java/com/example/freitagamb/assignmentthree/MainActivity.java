@@ -32,7 +32,15 @@ public class MainActivity extends Activity {
     private void initializeData(){
         albums=new ArrayList<>();
         albums.add(new AlbumInfo(R.drawable.echurch,"Eric Church", "Chief", 11, 2011, "EMI Nashville"));
+        albums.add(new AlbumInfo(R.drawable.fsinatra,"Frank Sinatra", "Come Fly With Me", 13, 1958, "Capitol Records"));
         albums.add(new AlbumInfo(R.drawable.bjoel,"Billy Joel", "Piano Man", 10, 1973, "Columbia"));
+        albums.add(new AlbumInfo(R.drawable.gmichael,"George Michael", "Faith", 11, 1987, "Epic Records"));
+        albums.add(new AlbumInfo(R.drawable.alexsierra,"Alex & Sierra", "It's About Us", 15, 2014, "Sony"));
+        albums.add(new AlbumInfo(R.drawable.genisis,"Genisis", "Invisible Man", 8, 1986, "Atlantic Records"));
+        albums.add(new AlbumInfo(R.drawable.nirvana,"Nirvana", "Nevermind", 12, 1991, "DGC Records ORG"));
+        albums.add(new AlbumInfo(R.drawable.queen,"Queen", "News of the World", 11, 1977, "EMI"));
+        albums.add(new AlbumInfo(R.drawable.ncole,"Nat King Cole", "Love Is the Thing", 12, 1957, "Capitol Records"));
+        albums.add(new AlbumInfo(R.drawable.halestorm,"Halestorm", "Into the Wild Life", 15, 2015, "Atlanta Records"));
     }
 
     private void initializeAdapter(){
