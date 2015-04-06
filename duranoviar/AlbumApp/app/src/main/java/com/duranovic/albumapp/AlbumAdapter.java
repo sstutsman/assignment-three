@@ -1,6 +1,11 @@
 package com.duranovic.albumapp;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +51,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.ivImage.setImageDrawable(albums.get(position).getalbumArt());
         // set the description text
         holder.tvDescription.setText(albums.get(position).getName() + "\n" +
-                albums.get(position).getArtist() + "\n" +
+                        albums.get(position).getArtist() + "\n" +
                         albums.get(position).getYear() + "\n" +
                         albums.get(position).getTrackCount() + " tracks" + "\n" +
                         albums.get(position).getPublisher() + "\n"
@@ -63,10 +68,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ItemClickListener listener;
-
         TextView tvDescription;
         ImageView ivImage;
-
+        Context context;
 
         // We map our views, and assign listeners in the ViewHolder constructor
         public ViewHolder(View itemView, ItemClickListener listener) {
@@ -77,19 +81,32 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
             tvDescription.setOnClickListener(this);
             ivImage.setOnClickListener(this);
+
+            context = itemView.getContext();
         }
 
         // This method is just to pass on the onClick event to our individual items! Neat!
         @Override
         public void onClick(View view) {
             listener.onItemClick(view, getPosition());
+
+            // create a new intent
+            Intent intent = new Intent(view.getContext(), OnClickActivity.class);
+
+            // pass the description
+            intent.putExtra("name", tvDescription.getText());
+            Bitmap image = ((BitmapDrawable)ivImage.getDrawable()).getBitmap();
+
+            // pass the image
+            intent.putExtra("image", image);
+
+            // start the new Activity
+            context.startActivity(intent);
         }
 
         // This is the interface which forces our Adapter to implement the OnClickListener
         public interface ItemClickListener {
             void onItemClick(View view, int position);
-
-            
         }
     }
 

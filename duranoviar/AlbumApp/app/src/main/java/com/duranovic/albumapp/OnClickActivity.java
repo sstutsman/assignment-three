@@ -14,6 +14,7 @@ public class OnClickActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_click);
 
-
+        // retrieve the Data
+        
     }
 }
