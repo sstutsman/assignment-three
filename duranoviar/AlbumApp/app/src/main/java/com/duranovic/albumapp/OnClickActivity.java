@@ -24,9 +24,11 @@ public class OnClickActivity extends Activity {
         // retrieve the Data
         Bitmap image = (Bitmap)this.getIntent().getParcelableExtra("image");
         String description = (String)this.getIntent().getStringExtra("name");
+        String tracks = (String)this.getIntent().getStringExtra("tracks");
 
         // map to the views
         tvDescription_onclick = (TextView) findViewById(R.id.tv_description_onclick);
+        tvTracks = (TextView) findViewById(R.id.tv_description_tracks);
         ivImage_onclick = (ImageView) findViewById(R.id.iv_image_onclick);
 
 
@@ -35,5 +37,8 @@ public class OnClickActivity extends Activity {
 
         // set the description text
         tvDescription_onclick.setText(description);
+
+        // set the tracks
+        tvTracks.setText("--------------------TRACKS--------------------\n" + tracks);
     }
 }

@@ -22,7 +22,7 @@ public class Album {
         this.trackCount = trackCount;
         this.year = year;
         this.publisher = publisher;
-        this.tracks = "";
+        this.tracks = tracks;
     }
 
     public String getName() {
