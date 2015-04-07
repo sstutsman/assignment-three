@@ -11,36 +11,43 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/accent_material_light"/>
+        android:textColor="@color/accent_material_light"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/accent_material_light"/>
+        android:textColor="@color/accent_material_light"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_tcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textColor="@color/accent_material_light"/>
 
     <TextView
         android:id="@+id/tv_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/accent_material_light"/>
+        android:textColor="@color/accent_material_light"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_publisher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/accent_material_light"/>
+        android:textColor="@color/accent_material_light"
+        android:layout_gravity="center"/>
 
     <ImageView
         android:id="@+id/iv_art"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/accent_material_light"/>
+        android:textColor="@color/accent_material_light"
+        android:layout_gravity="center"/>
+
 
 </LinearLayout>
