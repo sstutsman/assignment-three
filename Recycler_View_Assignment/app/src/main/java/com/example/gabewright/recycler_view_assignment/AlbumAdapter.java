@@ -1,5 +1,7 @@
 package com.example.gabewright.recycler_view_assignment;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,24 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
             @Override
             public void onItemClick(View view, int position) {
+                Intent intent = new Intent(AlbumAdapter.this, activity2.class);
+                String name  = albums.get(position).getName();
+                String year = albums.get(position).getYear();
+                String publisher = albums.get(position).getYear();
+                String tcount = albums.get(position).getTcount();
+                String artist = albums.get(position).getTcount();
+                Drawable art = albums.get(position).getArt();
+                intent.putExtra("name", name);
+                intent.putExtra("year", year);
+                intent.putExtra("publisher", publisher);
+                intent.putExtra("tcount", tcount);
+                intent.putExtra("artist", artist);
+                intent.putExtra("art", art);
+
+                Album album = albums.get(position);
+                intent.putExtra("album", album);
+
+                StartActivity(intent);
 
 
 
@@ -77,6 +97,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         @Override
         public void onClick(View view) {
             listener.onItemClick(view, getPosition());
+
         }
 
         public interface ItemClickListener {
