@@ -1,12 +1,12 @@
 package com.example.elise.assignment_three;
 
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
 /**
- * Created by Elise on 3/30/2015.
+ * Created by Elise Johnson on 3/30/2015.
  */
 public class Album {
+    //Attributes
     private Drawable cover;
     private String name;
     private String artist;
@@ -14,6 +14,7 @@ public class Album {
     private Integer year;
     private String publisher;
 
+    //Constructor
     public Album(Drawable cover, String name, String artist,
                  Integer trackCount, Integer year, String publisher){
         this.cover = cover;
@@ -24,6 +25,7 @@ public class Album {
         this.publisher = publisher;
     }
 
+    //Getters
     public Drawable getCover(){
         return cover;
     }

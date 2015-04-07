@@ -15,38 +15,48 @@ import java.util.List;
 
 
 /**
- * Created by Elise on 3/30/2015.
+ * Created by Elise Johnson on 3/30/2015.
  */
 public class RecyclerViewFragment extends Fragment {
 
+    //Variables
     private RecyclerView recyclerAlbums;
 
+    //Constructor
     public RecyclerViewFragment(){
         // Required empty constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        //Decides layout the fragment will use
         return inflater.inflate(R.layout.fragment_recycler_view, container, false);
     }
 
     @Override
+    //View passed in contains all of the XML views
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
+        //Map the view
         recyclerAlbums = (RecyclerView) view.findViewById(R.id.recycler_albums);
 
+        //Creating a LayoutManager for the RecyclerView
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
+        //Setting the LayoutManager to the RecyclerView
         recyclerAlbums.setLayoutManager(layoutManager);
 
+        //Creating a list of albums
         List<Album> albums = myAlbums();
 
+        //Setting the adapter
         recyclerAlbums.setAdapter(new AlbumAdapter(albums,getActivity().getApplicationContext()));
 
     }
 
     private List<Album> myAlbums(){
+        //Creating list of albums and filling with data
         List<Album> albums = new ArrayList<>();
         Resources res = getResources();
 
