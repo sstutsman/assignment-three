@@ -21,6 +21,7 @@ import java.util.List;
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
 
     List<Album> albums;
+    Context context;
 
     // Constructor class creates the adapter and passses in what we will need from our Fragment
     public AlbumAdapter(List<Album> albums) {
@@ -32,12 +33,35 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         // This line inflates the layout which will be repeated
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_element, parent, false);
 
+        // get the current context
+        context = parent.getContext();
+
         // We create an instance of our ViewHolder so we can handle click events.
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 // We can handle click events in here, but only if we have
                 // registered the listeners in the ViewHolder
+                // create a new intent
+                Intent intent = new Intent(view.getContext(), OnClickActivity.class);
+
+                // pass the description
+                intent.putExtra("name", albums.get(position).getName() + "\n" +
+                        albums.get(position).getArtist() + "\n" +
+                        albums.get(position).getYear() + "\n" +
+                        albums.get(position).getTrackCount() + " tracks" + "\n" +
+                        albums.get(position).getPublisher() + "\n");
+
+                intent.putExtra("tracks", albums.get(position).getTracks());
+
+                // pass the image
+                Bitmap image = ((BitmapDrawable)albums.get(position).getalbumArt()).getBitmap();
+
+                // pass the image
+                intent.putExtra("image", image);
+
+                // start the new Activity
+                context.startActivity(intent);
             }
         });
         return viewHolder;
@@ -54,8 +78,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                         albums.get(position).getArtist() + "\n" +
                         albums.get(position).getYear() + "\n" +
                         albums.get(position).getTrackCount() + " tracks" + "\n" +
-                        albums.get(position).getPublisher() + "\n"
-        );
+                        albums.get(position).getPublisher() + "\n");
     }
 
     @Override
@@ -70,38 +93,23 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         ItemClickListener listener;
         TextView tvDescription;
         ImageView ivImage;
-        Context context;
 
         // We map our views, and assign listeners in the ViewHolder constructor
         public ViewHolder(View itemView, ItemClickListener listener) {
             super(itemView);
             this.listener = listener;
+
             tvDescription = (TextView) itemView.findViewById(R.id.tv_description);
             ivImage = (ImageView) itemView.findViewById(R.id.iv_image);
 
             tvDescription.setOnClickListener(this);
             ivImage.setOnClickListener(this);
-
-            context = itemView.getContext();
         }
 
         // This method is just to pass on the onClick event to our individual items! Neat!
         @Override
         public void onClick(View view) {
             listener.onItemClick(view, getPosition());
-
-            // create a new intent
-            Intent intent = new Intent(view.getContext(), OnClickActivity.class);
-
-            // pass the description
-            intent.putExtra("name", tvDescription.getText());
-            Bitmap image = ((BitmapDrawable)ivImage.getDrawable()).getBitmap();
-
-            // pass the image
-            intent.putExtra("image", image);
-
-            // start the new Activity
-            context.startActivity(intent);
         }
 
         // This is the interface which forces our Adapter to implement the OnClickListener

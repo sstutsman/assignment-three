@@ -57,61 +57,71 @@ public class RecyclerViewFragment extends Fragment {
                 "Pink Floyd",
                 "10",
                 "1973",
-                "Harvest"));
+                "Harvest",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.poison1),
                 "Open Up and Say... Ahh!",
                 "Poison",
                 "10",
                 "1988",
-                "Enigma"));
+                "Enigma",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.rsz_wslide),
                 "Slide It In",
                 "Whitesnake",
                 "10",
                 "1984",
-                "Warner Bros."));
+                "Warner Bros.",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.philc),
                 "No Jacket Required",
                 "Phil Collins",
                 "10",
                 "1985",
-                "Atlantic"));
+                "Atlantic",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.u2),
                 "The Joshua Tree",
                 "U2",
                 "11",
                 "1987",
-                "Island"));
+                "Island",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.googoo),
                 "Dizzy Up the Girl",
                 "Goo Goo Dolls",
                 "13",
                 "1988",
-                "Warner Bros."));
+                "Warner Bros.",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.thepolice),
                 "Synchronicity",
                 "The Police",
                 "10",
                 "1987",
-                "A&M"));
+                "A&M",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.toto),
                 "Toto IV",
                 "Toto",
                 "10",
                 "1982",
-                "Columbia"));
+                "Columbia",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.kansas),
                 "Leftoverture",
                 "Kansas",
                 "8",
                 "1976",
-                "Kirshner"));
+                "Kirshner",
+                "track\ntrack\nrack\ntrack\ntrack"));
         albums.add(new Album(getResources().getDrawable(R.drawable.styx),
                 "The Grand Illusion",
                 "Styx",
                 "8",
                 "1977",
-                "A&M"));
+                "A&M",
+                "track\ntrack\nrack\ntrack\ntrack"));
 
         return albums;
     }

@@ -13,14 +13,16 @@ public class Album {
     private String trackCount;
     private String year;
     private String publisher;
+    private String tracks;
 
-    public Album(Drawable albumArt, String name, String artist, String trackCount, String year, String publisher) {
+    public Album(Drawable albumArt, String name, String artist, String trackCount, String year, String publisher, String tracks) {
         this.albumArt = albumArt;
         this.name = name;
         this.artist = artist;
         this.trackCount = trackCount;
         this.year = year;
         this.publisher = publisher;
+        this.tracks = "";
     }
 
     public String getName() {
@@ -41,6 +43,10 @@ public class Album {
 
     public String getPublisher() {
         return publisher;
+    }
+
+    public String getTracks() {
+        return tracks;
     }
 
     public Drawable getalbumArt() {
