@@ -50,7 +50,7 @@ public class RecyclerViewFragment extends Fragment {
     }
 
     private List<Album> mockAlbums() {
-        // Creates a list of Contacts and fills them up with data
+        // Creates a list of Albums and fills them up with data
         List<Album> albums = new ArrayList<>();
         albums.add(new Album(getResources().getDrawable(R.drawable.darkside),
                 "Dark Side of the Moon",

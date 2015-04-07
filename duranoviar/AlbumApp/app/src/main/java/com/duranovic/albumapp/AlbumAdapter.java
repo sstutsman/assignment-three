@@ -42,6 +42,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             public void onItemClick(View view, int position) {
                 // We can handle click events in here, but only if we have
                 // registered the listeners in the ViewHolder
+
                 // create a new intent
                 Intent intent = new Intent(view.getContext(), OnClickActivity.class);
 
@@ -68,7 +69,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     }
 
     @Override
-    // This method assigns the values from the contacts list we passed in to the views
+    // This method assigns the values from the albums list we passed in to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         // set the image
