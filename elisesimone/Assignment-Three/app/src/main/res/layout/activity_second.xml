@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.elise.assignment_three.SecondActivity"
+    android:layout_margin="12dp"
+    android:background="#238"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+        <TextView
+            android:id="@+id/name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/artist_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/track_count_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/year_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/publisher_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:padding="8dp"/>
+
+    <ImageView
+        android:id="@+id/cover_2"
+        android:layout_width="312dp"
+        android:layout_height="312dp"
+        android:gravity="center_horizontal"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>
