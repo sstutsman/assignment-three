@@ -113,7 +113,7 @@ public class RecyclerViewFragment extends Fragment {
                 "5.  \"One More Night\"\n" +
                 "6.  \"Don't Lose My Number\"\n" +
                 "7.  \"Who Said I Would\"\n" +
-                "8.  \"Doesn't Anybody Stay Together Anymore\"\n" +
+                "8.  \"Doesn't Anybody Stay Together...\"\n" +
                 "9.  \"Inside Out\"\n" +
                 "10. \"Take Me Home\"\n" ));
         albums.add(new Album(getResources().getDrawable(R.drawable.u2),
@@ -123,7 +123,7 @@ public class RecyclerViewFragment extends Fragment {
                 "1987",
                 "Island",
                 "1.  \"Where the Streets Have No Name\"\n" +
-                "2.  \"I Still Haven't Found What I'm Looking For\"\n" +
+                "2.  \"Haven't Found What I'm Looking For\"\n" +
                 "3.  \"With or Without You\"\n" +
                 "4.  \"Bullet the Blue Sky\"\n" +
                 "5.  \"Running to Stand Still\"\n" +
