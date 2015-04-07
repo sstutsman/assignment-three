@@ -18,7 +18,9 @@
         android:gravity="center_horizontal"
         android:text="@string/main_string"
         android:textColor="@color/AliceBlue"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:contentDescription="@string/icon_string"
+        android:src="@drawable/ic_launcher"/>
 
 
     <Button
