@@ -2,9 +2,8 @@ package com.example.elise.assignment_three;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,13 +36,11 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             @Override
             public void onItemClick(View view, int position){
 
-                /*
-                Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
+                Drawable cover = albums.get(position).getCover();
+                Bitmap bitmap = ((BitmapDrawable)cover).getBitmap();
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, output);
-                byte[] b = output.toByteArray();*/
-
-                //cover.setImageDrawable(albums.get(position).getCover());
+                byte[] b = output.toByteArray();
 
                 String name = albums.get(position).getName();
                 String artist = albums.get(position).getArtist();
@@ -52,15 +49,15 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                 String publisher = albums.get(position).getPublisher();
 
                 Intent intent = new Intent(context, SecondActivity.class);
-                //intent.putExtra("cover",b);
-                //intent.putExtra("cover",cover.getDrawable().toString());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("name", name.toString());
-                intent.putExtra("artist", artist.toString());
-                intent.putExtra("tracks", track_count.toString());
-                intent.putExtra("year", year.toString());
-                intent.putExtra("publisher", publisher.toString());
+
+                intent.putExtra("cover",b);
+                intent.putExtra("name", name);
+                intent.putExtra("artist", artist);
+                intent.putExtra("tracks", track_count);
+                intent.putExtra("year", year);
+                intent.putExtra("publisher", publisher);
 
                 context.startActivity(intent);
             }
