@@ -19,14 +19,14 @@ public class RecyclerViewFragment extends Fragment {
     private RecyclerView recyclerAlbum;
 
     public RecyclerViewFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_recycler_view, container, false);
     }
 
