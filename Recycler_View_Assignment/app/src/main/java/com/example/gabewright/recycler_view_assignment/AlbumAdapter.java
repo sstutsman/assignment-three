@@ -26,6 +26,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             @Override
             public void onItemClick(View view, int position) {
 
+
+
             }
         });
         return viewHolder;
