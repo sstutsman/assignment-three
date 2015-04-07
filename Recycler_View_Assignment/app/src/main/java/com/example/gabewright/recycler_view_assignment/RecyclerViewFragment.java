@@ -63,7 +63,7 @@ public class RecyclerViewFragment extends Fragment {
         albums.add(new Album("The Spirit of Radio: Greatest Hits (1974 - 1987)", "Rush", "16 Songs", "2013", "The Island Def Jam Music Group", rush));
         albums.add(new Album("Breakfast", "Chiddy Bang", "14 Songs", "2012", "Parlophone Records Ltd", breakfast));
         albums.add(new Album("Third Eye Blind: A Collection", "Third Eye Blind", "21 Songs", "2006", "Elektra Entertainment Co.", third));
-        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray (Deluxe Version)", "B.o.B", "16 Songs", "2010", "Atlantic Recording Corporation", adventures));
+        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray", "B.o.B", "12 Songs", "2010", "Atlantic Recording Corporation", adventures));
         albums.add(new Album("Man On The Moon: The End of Day", "Kid Cudi", "15 Songs", "2009", "Universal Motown Records", manonmoon));
         return albums;
 

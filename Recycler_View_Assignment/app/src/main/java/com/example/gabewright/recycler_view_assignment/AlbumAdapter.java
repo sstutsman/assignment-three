@@ -24,30 +24,28 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_album, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
+        final ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(AlbumAdapter.this, activity2.class);
-                String name  = albums.get(position).getName();
-                String year = albums.get(position).getYear();
-                String publisher = albums.get(position).getYear();
-                String tcount = albums.get(position).getTcount();
-                String artist = albums.get(position).getTcount();
-                Drawable art = albums.get(position).getArt();
-                intent.putExtra("name", name);
-                intent.putExtra("year", year);
-                intent.putExtra("publisher", publisher);
-                intent.putExtra("tcount", tcount);
-                intent.putExtra("artist", artist);
-                intent.putExtra("art", art);
 
-                Album album = albums.get(position);
-                intent.putExtra("album", album);
-
-                StartActivity(intent);
-
-
-
+//                Intent intent = new Intent(, activity2.class);
+//                String name  = albums.get(position).getName();
+//                String year = albums.get(position).getYear();
+//                String publisher = albums.get(position).getYear();
+//                String tcount = albums.get(position).getTcount();
+//                String artist = albums.get(position).getTcount();
+//                Drawable art = albums.get(position).getArt();
+//                intent.putExtra("name", name);
+//                intent.putExtra("year", year);
+//                intent.putExtra("publisher", publisher);
+//                intent.putExtra("tcount", tcount);
+//                intent.putExtra("artist", artist);
+//                intent.putExtra("art", art);
+//
+//                Album album = albums.get(position);
+//                intent.putExtra("album", album);
+//
+//                StartActivity(intent);
             }
         });
         return viewHolder;
@@ -61,6 +59,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvPublisher.setText(albums.get(position).getPublisher());
         holder.tvYear.setText(albums.get(position).getYear());
         holder.ivArt.setImageDrawable(albums.get(position).getArt());
+
     }
 
     public int getItemCount() {return albums.size();}
