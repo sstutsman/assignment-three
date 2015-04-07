@@ -42,7 +42,7 @@ public class RecyclerViewFragment extends Fragment {
 
         List<Album> albums = myAlbums();
 
-        recyclerAlbums.setAdapter(new AlbumAdapter(albums));
+        recyclerAlbums.setAdapter(new AlbumAdapter(albums,getActivity().getApplicationContext()));
 
     }
 
