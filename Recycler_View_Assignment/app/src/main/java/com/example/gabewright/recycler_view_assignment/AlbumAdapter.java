@@ -38,6 +38,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvTcount.setText(albums.get(position).getTcount());
         holder.tvPublisher.setText(albums.get(position).getPublisher());
         holder.tvYear.setText(albums.get(position).getYear());
+        holder.ivArt.setImageDrawable(albums.get(position).getArt());
     }
 
     public int getItemCount() {return albums.size();}
