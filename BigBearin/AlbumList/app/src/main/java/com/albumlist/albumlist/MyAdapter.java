@@ -14,6 +14,25 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         this.itemsData = itemsData;
     }
 
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+//            implements View.OnClickListener (
+
+        private TextView txtViewTitle;
+        private ImageView imgViewIcon;
+
+        public ViewHolder(View itemLayoutView) {
+            super(itemLayoutView);
+//            itemLayoutView.setOnClickListener(this);
+            txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.album_title);
+            imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.album_icon);
+        }
+
+//        @Override
+//        public void onClick(View v) {
+//
+//        }
+    }
+
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
 
@@ -29,20 +48,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         viewHolder.txtViewTitle.setText(itemsData[position].getTitle());
         viewHolder.imgViewIcon.setImageResource(itemsData[position].getImageUrl());
-
-
-    }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView txtViewTitle;
-        public ImageView imgViewIcon;
-
-        public ViewHolder(View itemLayoutView) {
-            super(itemLayoutView);
-            txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.album_title);
-            imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.album_icon);
-        }
     }
 
     @Override
