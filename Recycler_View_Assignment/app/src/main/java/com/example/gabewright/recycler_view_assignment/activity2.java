@@ -17,6 +17,7 @@ public class activity2 extends ActionBarActivity {
     TextView year;
     TextView publisher;
     ImageView art;
+    TextView funFact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class activity2 extends ActionBarActivity {
         year = (TextView) findViewById(R.id.year2);
         publisher = (TextView) findViewById(R.id.publisher2);
         art = (ImageView) findViewById(R.id.art2);
+        funFact = (TextView) findViewById(R.id.funfact);
 
         Resources res = getResources();
 
@@ -38,6 +40,7 @@ public class activity2 extends ActionBarActivity {
         publisher.setText(getIntent().getStringExtra("publisher"));
         int artint = Integer.parseInt(getIntent().getStringExtra("artint"));
         art.setImageDrawable(res.getDrawable(artint));
+        funFact.setText(getIntent().getStringExtra("funfact"));
 
     }
 

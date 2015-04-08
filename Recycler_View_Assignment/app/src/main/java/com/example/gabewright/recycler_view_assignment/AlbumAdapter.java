@@ -1,5 +1,6 @@
 package com.example.gabewright.recycler_view_assignment;
 
+
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
 /**
  * Created by GabeWright on 4/6/15.
  */
@@ -21,31 +23,31 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public AlbumAdapter(List<Album> albums) {this.albums = albums;}
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_album, parent, false);
         final ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
             @Override
             public void onItemClick(View view, int position) {
 
-//                Intent intent = new Intent(, activity2.class);
-//                String name  = albums.get(position).getName();
-//                String year = albums.get(position).getYear();
-//                String publisher = albums.get(position).getYear();
-//                String tcount = albums.get(position).getTcount();
-//                String artist = albums.get(position).getTcount();
-//                int  artint = albums.get(position).getDrawableint();
-//                intent.putExtra("name", name);
-//                intent.putExtra("year", year);
-//                intent.putExtra("publisher", publisher);
-//                intent.putExtra("tcount", tcount);
-//                intent.putExtra("artist", artist);
-//                intent.putExtra("artint", artint);
-//
-//                Album album = albums.get(position);
-//                intent.putExtra("album", album);
-//
-//                StartActivity(intent);
+                Intent intent = new Intent(parent.getContext(), activity2.class);
+                String name  = albums.get(position).getName();
+                String year = albums.get(position).getYear();
+                String publisher = albums.get(position).getPublisher();
+                String tcount = albums.get(position).getTcount();
+                String artist = albums.get(position).getArtist();
+                String artint = Integer.toString(albums.get(position).getDrawableint());
+                String funfact = albums.get(position).getFunFacts();
+
+                intent.putExtra("name", name);
+                intent.putExtra("year", year);
+                intent.putExtra("publisher", publisher);
+                intent.putExtra("tcount", tcount);
+                intent.putExtra("artist", artist);
+                intent.putExtra("artint", artint);
+                intent.putExtra("funfact", funfact);
+
+                parent.getContext().startActivity(intent);
             }
         });
         return viewHolder;

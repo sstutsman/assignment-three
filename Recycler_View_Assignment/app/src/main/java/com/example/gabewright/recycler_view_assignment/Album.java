@@ -15,8 +15,9 @@ public class Album{
     private String publisher;
     private Drawable art;
     int drawableint;
+    private String funFacts;
 
-    public Album(String name, String artist, String tcount, String year, String publisher, Drawable art, int drawableint){
+    public Album(String name, String artist, String tcount, String year, String publisher, Drawable art, int drawableint, String funFacts){
         this.name = name;
         this.artist = artist;
         this.tcount = tcount;
@@ -24,6 +25,7 @@ public class Album{
         this.publisher = publisher;
         this.art = art;
         this.drawableint = drawableint;
+        this.funFacts = funFacts;
 
 
     }
@@ -47,5 +49,7 @@ public class Album{
     public Drawable getArt() {return art; }
 
     public int getDrawableint() {return drawableint;}
+
+    public String getFunFacts() {return funFacts;}
 
 }
