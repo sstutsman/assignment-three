@@ -24,7 +24,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="80dp"
         android:layout_margin="5dp"
-        android:src="@drawable/playicon" />
+        android:src="@drawable/playicon"
+        android:focusable="false"
+
+        />
 
     <TextView
         android:layout_width="match_parent"

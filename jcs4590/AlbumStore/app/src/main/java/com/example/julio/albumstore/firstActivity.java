@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +19,7 @@ import java.util.Set;
 
 public class firstActivity extends Activity {
 
-    protected Button logInButton;
+    protected ImageButton logInButton;
     private Uri uriData;
     private SharedPreferences userData;
     private SharedPreferences.Editor editor;
@@ -31,7 +32,7 @@ public class firstActivity extends Activity {
         editor = userData.edit();
 
 
-        logInButton = (Button) findViewById(R.id.button);
+        logInButton = (ImageButton) findViewById(R.id.button);
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +49,7 @@ public class firstActivity extends Activity {
         uriData = getIntent().getData();
         if(uriData != null){
             String authCode = uriData.getQueryParameter("code");
-            editor.putString("userAuthCode",authCode);
+            editor.putString("code",authCode);
             editor.commit();
             Intent i = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(i,null);

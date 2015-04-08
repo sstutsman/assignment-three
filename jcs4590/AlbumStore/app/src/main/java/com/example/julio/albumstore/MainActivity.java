@@ -1,6 +1,7 @@
 package com.example.julio.albumstore;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Entity;
 import android.content.SharedPreferences;
@@ -57,13 +58,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-
-
-
+import java.util.Timer;
+import java.util.TimerTask;
+import android.os.Handler;
 
 
 public class MainActivity  extends Activity {
-
 
 
     private RecyclerView albumsRecyclerView;
@@ -80,45 +80,47 @@ public class MainActivity  extends Activity {
     private CurrentSession currentSession;
     private Map<String, Object> albumsMap;
     private HttpResponse response;
-
+    private String userCode;
+    private static Timer timer;
+    private TimerTask timerTask;
+    private final Handler timerHandler = new Handler();
+    private String refreshResponseString;
 
 
     private String[] albums;
-
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        currentSession = new CurrentSession();
-
-          dataSetList = new ArrayList<Album>();
-
         userData = getSharedPreferences("UserData", Context.MODE_PRIVATE);
+        currentSession = new Gson().fromJson(userData.getString("session", null), CurrentSession.class);
+        dataSetList = new ArrayList<Album>();
+
+//        if(currentSession != null){
+//            startTimer();
+//        }
+
 
         //download album data
         new DownloadAlbums().execute("https://accounts.spotify.com/api/token");
 
-         //set up recycler view
+        //set up recycler view
         albumsRecyclerView = (RecyclerView) findViewById(R.id.albumRecycleView);
         albumsRecyclerView.setHasFixedSize(true);
         albumReyclerViewAdpter = new AlbumAdapter(this, dataSetList);
         albumsRecyclerView.setAdapter(albumReyclerViewAdpter);
-        layoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         albumsRecyclerView.setLayoutManager(layoutManager);
-
-
-
-
 
     }
 
-    public void asyncComplete(boolean success){
+    public void asyncComplete(boolean success) {
         albumReyclerViewAdpter.notifyDataSetChanged();
 
     }
+
     @Override
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -139,118 +141,65 @@ public class MainActivity  extends Activity {
             HttpPost httpPost = new HttpPost(params[0]);
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
             nameValuePairs.add(new BasicNameValuePair("grant_type", "authorization_code"));
-            String userCode = userData.getString("userAuthCode", null);
             String authHeader = clientID + ":" + clientSecret;
             HttpEntity tokenEnity;
             String responseString;
-            userToken = userData.getString("userToken",null);
+
+            if (currentSession == null) {
 
 
-            nameValuePairs.add(new BasicNameValuePair("code", userCode));
+                try {
+                    //set post parameters for getting token
+                    userCode = userData.getString("code", null);
+                    nameValuePairs.add(new BasicNameValuePair("code", userCode));
+                    nameValuePairs.add(new BasicNameValuePair("redirect_uri", "http://topalbums"));
+                    String encodedString = Base64.encodeToString(authHeader.getBytes("UTF-8"), Base64.DEFAULT).replaceAll("\\s", "");
+                    httpPost.setHeader("Authorization", "Basic " + encodedString);
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-            nameValuePairs.add(new BasicNameValuePair("redirect_uri", "http://topalbums"));
-
-            try {
-                String encodedString = Base64.encodeToString(authHeader.getBytes("UTF-8"), Base64.DEFAULT).replaceAll("\\s", "");
-                httpPost.setHeader("Authorization", "Basic " + encodedString);
-                httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-
-            } catch (UnsupportedEncodingException e) {
-
-                e.printStackTrace();
-
-
-            }
-
-
-            try {
-                if(userToken == null) {
                     response = httpClient.execute(httpPost);
                     tokenEnity = response.getEntity();
-                     responseString = EntityUtils.toString(tokenEnity).replace("{", "");
-                    responseString = responseString.replace("}", "");
-                    userToken = responseString.split(",")[0].split(":")[1].replace("\"", "");
-                    currentSession.setAuthToken(userToken);
+                    responseString = EntityUtils.toString(tokenEnity);
+
+                    currentSession = new Gson().fromJson(responseString, CurrentSession.class);
+                    // startTimer();
+
+
                     SharedPreferences.Editor editor = userData.edit();
-                    editor.putString("userToken", userToken);
+                    editor.putString("session", responseString);
                     editor.commit();
 
 
-
-                    getNewReleases();
-                }
-                else{
-
                     getNewReleases();
 
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+            } else {
+                getNewReleases();
 
-
-
-
-            } catch (Exception e) {
-                e.printStackTrace();
             }
 
 
             return currentSession.getAllAlbums();
         }
 
-        private void getNewReleases() {
-
-try {
-
-
-    HttpGet httpGet = new HttpGet("https://api.spotify.com/v1/browse/new-releases");
-    String bearer = String.format("Bearer %s", userToken);
-    httpGet.setHeader("Authorization", bearer);
-
-
-    response = httpClient.execute(httpGet);
-    HttpEntity albumResponseEntity = response.getEntity();
-    String responseString = EntityUtils.toString(albumResponseEntity);
 
 
 
-    JsonParser parser = new JsonParser();
-    JsonObject obj = parser.parse(responseString).getAsJsonObject();
-    int albumsNumber = obj.get("albums").getAsJsonObject().get("items").getAsJsonArray().size();
-    Uri[] albumUrlArray = new Uri[20];
-    String albumIDString = "";
-    for (int i = 0; i < albumUrlArray.length; i++) {
-
-        albumUrlArray[i] = Uri.parse(obj.get("albums").getAsJsonObject().get("items").getAsJsonArray()
-                .get(i).getAsJsonObject().get("href").toString().replace("\"", ""));
-        if (i == 19) {
-            albumIDString += albumUrlArray[i].getLastPathSegment();
-        } else {
-            albumIDString += albumUrlArray[i].getLastPathSegment() + ",";
-        }
-
-    }
-    albumIDString = albumIDString.replaceAll(" , $", "");
-
-
-    httpGet.setURI(new URI("https://api.spotify.com/v1/albums?ids=" + albumIDString));
-    response = httpClient.execute(httpGet);
-    albumResponseEntity = response.getEntity();
-    responseString = EntityUtils.toString(albumResponseEntity);
-
-
-    responseString = parser.parse(responseString).getAsJsonObject().get("albums").toString();
-
-    Gson gson = new Gson();
-    currentSession.setAllAlbums(gson.fromJson(responseString, Album[].class));
-}catch (Exception e){
-    e.printStackTrace();
-}
-
-        }
 
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
             setProgress(values[0]);
+
+            ProgressDialog dialog = new ProgressDialog(getApplication());
+            dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            dialog.setMessage("Loading. Please wait...");
+            dialog.setIndeterminate(true);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
         }
 
         @Override
@@ -259,13 +208,11 @@ try {
 
 
             dataSetList.addAll(Arrays.asList(result));
-
-albumReyclerViewAdpter.notifyDataSetChanged();
+            albumReyclerViewAdpter.notifyDataSetChanged();
 
         }
 
     }
-
 
 
 
@@ -285,4 +232,108 @@ albumReyclerViewAdpter.notifyDataSetChanged();
     }
 
 
+
+
+
+    public class RefreshToken extends AsyncTask<Void,Void,Void>{
+
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+           refreshToken();
+
+            return null;
+        }
+
+
+
+
+    }
+    private void refreshToken() {
+
+        HttpPost httpPost = new HttpPost("https://accounts.spotify.com/api/token");
+        HttpClient client =  new DefaultHttpClient();
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        nameValuePairs.add(new BasicNameValuePair("grant_type","refresh_token"));
+        nameValuePairs.add(new BasicNameValuePair("refresh_token",currentSession.getRefresh_token()));
+        String authHeader = clientID + ":" + clientSecret;
+
+        try {
+            String encodedString = Base64.encodeToString(authHeader.getBytes("UTF-8"), Base64.DEFAULT).replaceAll("\\s", "");
+            httpPost.setHeader("Authorization", "Basic " + encodedString);
+            httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+            HttpResponse response = client.execute(httpPost);
+            refreshResponseString = EntityUtils.toString(response.getEntity());
+            String refreshToken = currentSession.getRefresh_token();
+            currentSession =  new Gson().fromJson(refreshResponseString,CurrentSession.class);
+            currentSession.setRefresh_token(refreshToken);
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+    private void getNewReleases() {
+
+        try {
+
+
+            //get albums
+            HttpGet httpGet = new HttpGet("https://api.spotify.com/v1/browse/new-releases");
+
+            String bearer = String.format("Bearer %s", currentSession.getAccess_token());
+
+            httpGet.setHeader("Authorization", bearer);
+            response = httpClient.execute(httpGet);
+            HttpEntity albumResponseEntity = response.getEntity();
+            String responseString = EntityUtils.toString(albumResponseEntity);
+            JsonParser parser = new JsonParser();
+            JsonObject obj = parser.parse(responseString).getAsJsonObject();
+            if (obj.has("error")) {
+                Log.w("Kobe the at", "blah");
+                refreshToken();
+                getNewReleases();
+            } else {
+                int albumsNumber = obj.get("albums").getAsJsonObject().get("items").getAsJsonArray().size();
+                Uri[] albumUrlArray = new Uri[20];
+                String albumIDString = "";
+                for (int i = 0; i < albumUrlArray.length; i++) {
+
+                    albumUrlArray[i] = Uri.parse(obj.get("albums").getAsJsonObject().get("items").getAsJsonArray()
+                            .get(i).getAsJsonObject().get("href").toString().replace("\"", ""));
+                    if (i == 19) {
+                        albumIDString += albumUrlArray[i].getLastPathSegment();
+                    } else {
+                        albumIDString += albumUrlArray[i].getLastPathSegment() + ",";
+                    }
+                }
+
+                albumIDString = albumIDString.replaceAll(" , $", "");
+
+
+                httpGet.setURI(new URI("https://api.spotify.com/v1/albums?ids=" + albumIDString));
+                response = httpClient.execute(httpGet);
+                albumResponseEntity = response.getEntity();
+                responseString = EntityUtils.toString(albumResponseEntity);
+
+
+                responseString = parser.parse(responseString).getAsJsonObject().get("albums").toString();
+
+                Gson gson = new Gson();
+                currentSession.setAllAlbums(gson.fromJson(responseString, Album[].class));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

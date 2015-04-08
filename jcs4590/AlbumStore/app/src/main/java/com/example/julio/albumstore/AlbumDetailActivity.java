@@ -2,6 +2,7 @@ package com.example.julio.albumstore;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -81,4 +82,27 @@ public class AlbumDetailActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.w("Kobe the CAT","onStop");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        TrackListAdapter.mediaPlayer.release();
+        Log.w("Kobe the CAT", "onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.w("Kobe the CAT","onPause");
+
+    }
 }
+
