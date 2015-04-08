@@ -27,6 +27,7 @@ public class TrackListAdapter extends ArrayAdapter<Album.Track>  {
     private ListView trackListView;
     private Album.Track track;
     private Integer currentTrackPlayingPosition;
+    private ImageButton oldButton;
 
      TrackListAdapter(final Context context,Album.Track[] tracksList) {
         super(context,R.layout.track_custom_row,tracksList);
@@ -36,6 +37,12 @@ public class TrackListAdapter extends ArrayAdapter<Album.Track>  {
              @Override
              public void onPrepared(MediaPlayer mp) {
                  mp.start();
+             }
+         });
+         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+             @Override
+             public void onCompletion(MediaPlayer mp) {
+                 mp.reset();
              }
          });
 
@@ -79,22 +86,22 @@ public class TrackListAdapter extends ArrayAdapter<Album.Track>  {
 
 
 
-
-
-
                 if (mediaPlayer.isPlaying()) {
 
                     mediaPlayer.stop();
                     mediaPlayer.reset();
 
                     if (currentTrackPlayingPosition != null && currentTrackPlayingPosition != position) {
+
                         try {
                             mediaPlayer.setDataSource(customView.getContext(), Uri.parse(track.getPreview_url()));
                             mediaPlayer.prepareAsync();
 
                             if(trackListView.getChildAt(currentTrackPlayingPosition) != null) {
-                                ImageButton oldButton = (ImageButton) trackListView.getChildAt(currentTrackPlayingPosition).findViewById(R.id.previewImageButton);
+                                oldButton = (ImageButton) trackListView.getChildAt(currentTrackPlayingPosition).findViewById(R.id.previewImageButton);
                                 oldButton.setImageResource(R.drawable.playicon);
+
+
                             }
                             previewImageButton.setImageResource(R.drawable.pauseicon);
 
@@ -106,6 +113,7 @@ public class TrackListAdapter extends ArrayAdapter<Album.Track>  {
                         previewImageButton.setImageResource(R.drawable.playicon);
 
                     }
+
 
                 } else {
 
