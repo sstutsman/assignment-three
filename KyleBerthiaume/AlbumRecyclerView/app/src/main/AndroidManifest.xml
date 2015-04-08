@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OnClickActivity"
+            android:label="@string/title_activity_on_click" >
+        </activity>
     </application>
 
 </manifest>

@@ -12,13 +12,16 @@ public class Album {
     private String artist;
     private String trackCount;
     private String publisher;
+    private String tracks;
 
-    public  Album(Drawable art, String albumName, String artist, String trackCount, String pub){
+    public  Album(Drawable art, String albumName, String artist, String trackCount, String pub ,
+                  String tracks){
         this.coverArt = art;
         this.albumName = albumName;
         this.artist = "By: " + artist;
         this.trackCount = "Track count: " + trackCount;
         this.publisher = pub;
+        this.tracks = tracks;
 
     }
 
@@ -40,5 +43,9 @@ public class Album {
 
     public Drawable getCoverArt(){
         return coverArt;
+    }
+
+    public String getTracks() {
+        return tracks;
     }
 }

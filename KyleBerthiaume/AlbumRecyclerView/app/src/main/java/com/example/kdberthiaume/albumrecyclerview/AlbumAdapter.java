@@ -1,6 +1,10 @@
 package com.example.kdberthiaume.albumrecyclerview;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.speech.tts.TextToSpeech;
@@ -20,6 +24,7 @@ import java.util.List;
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
 
     List<Album> albums;
+    Context context;
 
     public AlbumAdapter(List<Album> albums) {
         this.albums = albums;
@@ -28,15 +33,37 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // inflate layout to be repeated
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.album_item, parent, false);
+        // Get current Context
+        context = parent.getContext();
 
         // Creating instance of ViewHolder for handling click events
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
             public void onItemClick(View view, int position){
                 // We can handle click events in here, but only if we have
                 // registered the listeners in the ViewHolder
+                // create a new intent
+
+                // Creating new intent to OnClickActivity
+                Intent intent = new Intent(view.getContext(), OnClickActivity.class);
+
+                // pass the description
+                intent.putExtra("name", albums.get(position).getAlbumName() + "\n" +
+                        albums.get(position).getArtist() + "\n" +
+                        albums.get(position).getTrackCount() + " tracks" + "\n" +
+                        albums.get(position).getPub() + "\n");
+
+                intent.putExtra("tracks", albums.get(position).getTracks());
+
+                // pass the image
+                Bitmap image = ((BitmapDrawable)albums.get(position).getCoverArt()).getBitmap();
+
+                // pass the image
+                intent.putExtra("image", image);
+
+                // start the new Activity
+                context.startActivity(intent);
             }
         });
-
         return viewHolder;
     }
 
