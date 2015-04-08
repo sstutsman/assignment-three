@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_gray"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_marginLeft="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="#B26200"
+            android:paddingTop="10dp"
+            android:text="Dummy Album"
+            android:textSize="25sp"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:id="@+id/tv_album_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#B26200"
+            android:layout_gravity="right"
+            android:text="Dummy Artist"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:id="@+id/tv_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right" />
+
+        <TextView
+            android:textColor="#B26200"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:text="12"
+            android:textSize="13sp"
+            android:id="@+id/tv_track_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#B26200"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:text="2014"
+            android:textSize="13sp"
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#B26200"
+            android:text="Dummy Pub"
+            android:layout_gravity="right"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:id="@+id/tv_publisher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:paddingTop="9dp"
+            android:paddingLeft="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/iv_album_art"
+            android:src="@drawable/pretty_reckless2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+</RelativeLayout>
