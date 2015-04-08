@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dk_blue">#455A64</color>
+    <color name="tile_bkg">#F2F2F2</color>
+    <color name="blue">#145E8C</color>
+    <color name="lt_grey">#CFD8DC</color>
+    <color name="accent">#8BC34A</color>
+    <color name="lt_blue">#607D8B</color>
+    <color name="divider">#B6B6B6</color>
+</resources>
