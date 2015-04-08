@@ -30,6 +30,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             @Override
             public void onItemClick(View view, int position) {
 
+                //create intent and put in stuff to be passed to new activity
+
                 Intent intent = new Intent(parent.getContext(), activity2.class);
                 String name  = albums.get(position).getName();
                 String year = albums.get(position).getYear();
@@ -47,6 +49,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                 intent.putExtra("artint", artint);
                 intent.putExtra("funfact", funfact);
 
+                //call intent
                 parent.getContext().startActivity(intent);
             }
         });
@@ -55,6 +58,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        //sets the info in the recycler view
         holder.tvName.setText(albums.get(position).getName());
         holder.tvArtist.setText(albums.get(position).getArtist());
         holder.tvTcount.setText(albums.get(position).getTcount());
@@ -80,6 +84,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
 
+            //set views in recyclerview
             tvName = (TextView) itemView.findViewById(R.id.tv_name);
             tvArtist = (TextView) itemView.findViewById(R.id.tv_artist);
             tvYear = (TextView) itemView.findViewById(R.id.tv_year);
@@ -87,6 +92,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvTcount = (TextView) itemView.findViewById(R.id.tv_tcount);
             ivArt = (ImageView) itemView.findViewById(R.id.iv_art);
 
+            //set onclick listener
             tvName.setOnClickListener(this);
             tvArtist.setOnClickListener(this);
             tvYear.setOnClickListener(this);

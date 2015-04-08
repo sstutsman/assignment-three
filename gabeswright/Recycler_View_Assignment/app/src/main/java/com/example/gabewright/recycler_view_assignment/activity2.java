@@ -22,6 +22,7 @@ public class activity2 extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setting the views
         setContentView(R.layout.activity_activity2);
         name = (TextView) findViewById(R.id.name2);
         artist = (TextView) findViewById(R.id.artist2);
@@ -33,6 +34,7 @@ public class activity2 extends ActionBarActivity {
 
         Resources res = getResources();
 
+        //adding text to the views
         name.setText(getIntent().getStringExtra("name"));
         artist.setText(getIntent().getStringExtra("artist"));
         tcount.setText(getIntent().getStringExtra("tcount"));

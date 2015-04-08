@@ -8,6 +8,7 @@ import android.widget.ImageView;
  * Created by GabeWright on 4/6/15.
  */
 public class Album{
+    //class for creating album
     private String name;
     private String artist;
     private String tcount;

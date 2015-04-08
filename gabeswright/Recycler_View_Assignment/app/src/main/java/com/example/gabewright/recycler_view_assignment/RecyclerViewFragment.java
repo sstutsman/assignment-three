@@ -43,6 +43,7 @@ public class RecyclerViewFragment extends Fragment {
 
     private List<Album> mockAlbums(){
 
+        //pictures!
         Resources res = getResources();
         Drawable strangeclouds = res.getDrawable(R.drawable.strangeclouds);
         Drawable boston = res.getDrawable(R.drawable.boston);
@@ -56,6 +57,7 @@ public class RecyclerViewFragment extends Fragment {
         Drawable manonmoon = res.getDrawable(R.drawable.manonmoon);
 
 
+        //ints to pass to new activity
         int di1 = R.drawable.strangeclouds;
         int di2 = R.drawable.boston;
         int di3 = R.drawable.billyjoel;
@@ -67,17 +69,18 @@ public class RecyclerViewFragment extends Fragment {
         int di9 = R.drawable.adventures;
         int di10 = R.drawable.manonmoon;
 
+        //make some albums
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album("Strange Clouds", "B.o.B", "15 Songs", "2012", "Atlantic Recording Corporation", strangeclouds, di1, "This is my favorite album"));
-        albums.add(new Album("Boston", "Boston", "8 Songs", "1976", "Epic Records", boston, di2, "Gotta love some Boston"));
-        albums.add(new Album("Greatest Hits, Vols. 1 & 2", "Billy Joel", "25 Songs", "1973", "Sony BMG Music Entertainment", billyjoel, di3, "I dare you to find me someone who doesn't like Billy Joel"));
-        albums.add(new Album("Appetite for Destruction", "Guns N' Roses", "12 Songs", "1987", "Geffen Records", gnr, di4, "Some GREAT classic rock here"));
-        albums.add(new Album("Led Zeppelin IV", "Led Zeppelin", "8 Songs", "1971", "Atlantic Recording Corporation", iv, di5, "The album I used to listen to with my dad that got me liking classic rock"));
-        albums.add(new Album("The Spirit of Radio: Greatest Hits (1974 - 1987)", "Rush", "16 Songs", "2013", "The Island Def Jam Music Group", rush, di6, "RUSH!!!!! Playing at the Xcel Energy Center in May"));
+        albums.add(new Album("Strange Clouds", "B.o.B", "15 Songs", "2012", "Atlantic Recording Corporation", strangeclouds, di1, "This is my favorite album."));
+        albums.add(new Album("Boston", "Boston", "8 Songs", "1976", "Epic Records", boston, di2, "Gotta love some Boston."));
+        albums.add(new Album("Greatest Hits, Vols. 1 & 2", "Billy Joel", "25 Songs", "1973", "Sony BMG Music Entertainment", billyjoel, di3, "I dare you to find me someone who doesn't like Billy Joel."));
+        albums.add(new Album("Appetite for Destruction", "Guns N' Roses", "12 Songs", "1987", "Geffen Records", gnr, di4, "Some GREAT classic rock here."));
+        albums.add(new Album("Led Zeppelin IV", "Led Zeppelin", "8 Songs", "1971", "Atlantic Recording Corporation", iv, di5, "The album I used to listen to with my dad that got me liking classic rock."));
+        albums.add(new Album("The Spirit of Radio: Greatest Hits (1974 - 1987)", "Rush", "16 Songs", "2013", "The Island Def Jam Music Group", rush, di6, "RUSH!!!!! Playing at the Xcel Energy Center in May."));
         albums.add(new Album("Breakfast", "Chiddy Bang", "14 Songs", "2012", "Parlophone Records Ltd", breakfast, di7, "The headliner for this year's Cornstock!"));
         albums.add(new Album("Third Eye Blind: A Collection", "Third Eye Blind", "21 Songs", "2006", "Elektra Entertainment Co.", third, di8, "90's pop in 2006. You betcha."));
-        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray", "B.o.B", "12 Songs", "2010", "Atlantic Recording Corporation", adventures, di9, "Another really solid B.o.B album"));
-        albums.add(new Album("Man On The Moon: The End of Day", "Kid Cudi", "15 Songs", "2009", "Universal Motown Records", manonmoon, di10, "Kid Cudi's not my favorite, but there's a number of good songs on this album"));
+        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray", "B.o.B", "12 Songs", "2010", "Atlantic Recording Corporation", adventures, di9, "Another really solid B.o.B album."));
+        albums.add(new Album("Man On The Moon: The End of Day", "Kid Cudi", "15 Songs", "2009", "Universal Motown Records", manonmoon, di10, "Kid Cudi's not my favorite, but there's a number of good songs on this album."));
         return albums;
 
     }
