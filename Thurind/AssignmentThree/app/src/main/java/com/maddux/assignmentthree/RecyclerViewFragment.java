@@ -24,12 +24,11 @@ public class RecyclerViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // This decides which layout the fragment will use.
+
         return inflater.inflate(R.layout.fragment_recycler_view, container, false);
     }
 
     @Override
-    // The view passed to us in this parameter contains all of the views we created in XML
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -57,7 +56,7 @@ public class RecyclerViewFragment extends Fragment {
         albums.add(new Album(R.drawable.black_market,"Black Market", "Rise Against", 7, 2014, "DGC, Interscope"));
         albums.add(new Album(R.drawable.minutes_to_midnight,"Minutes to Midnight", "Linkin Park", 7, 2007,"Warner Bros, Machine Shop"));
         albums.add(new Album(R.drawable.hybrid_theory,"Hybrid Theory", "Linkin Park", 12, 2000,"Warner Bros"));
-        albums.add(new Album(R.drawable.meteora, "Endgame", "Linkin Park", 13, 2003,"Warner Bros, Machine Shop"));
+        albums.add(new Album(R.drawable.meteora, "Meteora", "Linkin Park", 13, 2003,"Warner Bros, Machine Shop"));
 
         return albums;
     }

@@ -15,10 +15,10 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:src="@drawable/appeal_to_reason"
+            android:src="@drawable/endgame"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:id="@+id/album_art"
+            android:id="@+id/album_cover_art"
             android:layout_gravity="center_horizontal" />
 
         <LinearLayout
