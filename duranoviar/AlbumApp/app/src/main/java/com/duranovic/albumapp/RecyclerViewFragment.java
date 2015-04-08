@@ -52,7 +52,7 @@ public class RecyclerViewFragment extends Fragment {
     private List<Album> mockAlbums() {
         // Creates a list of Albums and fills them up with data
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album(getResources().getDrawable(R.drawable.darkside),
+        albums.add(new Album(R.drawable.darkside,
                 "Dark Side of the Moon",
                 "Pink Floyd",
                 "10",
@@ -68,7 +68,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.	 \"Any Colour You Like\"\n"+
                 "9.	 \"Brain Damage\"\n"+
                 "10. \"Eclipse\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.poison1),
+        albums.add(new Album(R.drawable.poison1,
                 "Open Up and Say... Ahh!",
                 "Poison",
                 "10",
@@ -84,7 +84,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.  \"Every Rose Has Its Thorn\"\n" +
                 "9.  \"Your Mama Don't Dance\"\n" +
                 "10. \"Bad to Be Good\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.rsz_wslide),
+        albums.add(new Album(R.drawable.rsz_wslide,
                 "Slide It In",
                 "Whitesnake",
                 "10",
@@ -100,7 +100,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.  \"Give Me More Time\"\n" +
                 "9.  \"Spit It Out\"\n" +
                 "10. \"Standing in the Shadow\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.philc),
+        albums.add(new Album(R.drawable.philc,
                 "No Jacket Required",
                 "Phil Collins",
                 "10",
@@ -116,7 +116,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.  \"Doesn't Anybody Stay Together...\"\n" +
                 "9.  \"Inside Out\"\n" +
                 "10. \"Take Me Home\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.u2),
+        albums.add(new Album(R.drawable.u2,
                 "The Joshua Tree",
                 "U2",
                 "11",
@@ -133,7 +133,7 @@ public class RecyclerViewFragment extends Fragment {
                 "9.  \"One Tree Hill\"\n" +
                 "10. \"Exit\"\n" +
                 "11. \"Mothers of the Disappeared\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.googoo),
+        albums.add(new Album(R.drawable.googoo,
                 "Dizzy Up the Girl",
                 "Goo Goo Dolls",
                 "13",
@@ -152,7 +152,7 @@ public class RecyclerViewFragment extends Fragment {
                 "11. \"Iris\"\n" +
                 "12. \"Extra Pale\"\n" +
                 "13. \"Hate This Place\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.thepolice),
+        albums.add(new Album(R.drawable.thepolice,
                 "Synchronicity",
                 "The Police",
                 "10",
@@ -168,7 +168,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.	 \"King of Pain\"\n" +
                 "9.	 \"Wrapped Around Your Finger\"\n" +
                 "10. \"Tea in the Sahara\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.toto),
+        albums.add(new Album(R.drawable.toto,
                 "Toto IV",
                 "Toto",
                 "10",
@@ -184,7 +184,7 @@ public class RecyclerViewFragment extends Fragment {
                 "8.	 \"We Made It\"\n" +
                 "9.	 \"Waiting for Your Love\"\n" +
                 "10. \"Africa\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.kansas),
+        albums.add(new Album(R.drawable.kansas,
                 "Leftoverture",
                 "Kansas",
                 "8",
@@ -198,7 +198,7 @@ public class RecyclerViewFragment extends Fragment {
                 "6.	\"Questions of My Childhood\"\n" +
                 "7.	\"Cheyenne Anthem\"\n" +
                 "8.	\"Magnum Opus\"\n" ));
-        albums.add(new Album(getResources().getDrawable(R.drawable.styx),
+        albums.add(new Album(R.drawable.styx,
                 "The Grand Illusion",
                 "Styx",
                 "8",

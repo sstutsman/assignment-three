@@ -7,7 +7,7 @@ package com.duranovic.albumapp;
 import android.graphics.drawable.Drawable;
 
 public class Album {
-    private Drawable albumArt;
+    private int albumArt;
     private String name;
     private String artist;
     private String trackCount;
@@ -15,7 +15,7 @@ public class Album {
     private String publisher;
     private String tracks;
 
-    public Album(Drawable albumArt, String name, String artist, String trackCount, String year, String publisher, String tracks) {
+    public Album(int albumArt, String name, String artist, String trackCount, String year, String publisher, String tracks) {
         this.albumArt = albumArt;
         this.name = name;
         this.artist = artist;
@@ -49,7 +49,7 @@ public class Album {
         return tracks;
     }
 
-    public Drawable getalbumArt() {
+    public int getalbumArt() {
         return albumArt;
     }
 

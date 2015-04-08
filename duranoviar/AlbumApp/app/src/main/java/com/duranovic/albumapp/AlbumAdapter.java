@@ -56,10 +56,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                 intent.putExtra("tracks", albums.get(position).getTracks());
 
                 // pass the image
-                Bitmap image = ((BitmapDrawable)albums.get(position).getalbumArt()).getBitmap();
-
-                // pass the image
-                intent.putExtra("image", image);
+                intent.putExtra("image", Integer.toString(albums.get(position).getalbumArt()));
 
                 // start the new Activity
                 context.startActivity(intent);
@@ -73,7 +70,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         // set the image
-        holder.ivImage.setImageDrawable(albums.get(position).getalbumArt());
+        holder.ivImage.setImageResource(albums.get(position).getalbumArt());
         // set the description text
         holder.tvDescription.setText(albums.get(position).getName() + "\n" +
                         albums.get(position).getArtist() + "\n" +

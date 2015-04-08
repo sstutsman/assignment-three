@@ -22,7 +22,6 @@ public class OnClickActivity extends Activity {
         setContentView(R.layout.activity_on_click);
 
         // retrieve the Data
-        Bitmap image = (Bitmap)this.getIntent().getParcelableExtra("image");
         String description = (String)this.getIntent().getStringExtra("name");
         String tracks = (String)this.getIntent().getStringExtra("tracks");
 
@@ -33,7 +32,7 @@ public class OnClickActivity extends Activity {
 
 
         // set the image
-        ivImage_onclick.setImageBitmap(image);
+        ivImage_onclick.setImageResource((Integer.parseInt(getIntent().getStringExtra("image"))));
 
         // set the description text
         tvDescription_onclick.setText(description);
