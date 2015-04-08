@@ -12,7 +12,7 @@ public class AlbumInfo {
     int trackCnt;
     List<TrackInfo> tracks;
 
-    AlbumInfo(int artID, String artist, String album, int trackCnt, int year, String publisher,List<TrackInfo> tracks) {
+    AlbumInfo(int artID, String artist, String album, int trackCnt, int year, String publisher, List<TrackInfo> tracks) {
         this.artID = artID;
         this.artist = artist;
         this.album = album;
@@ -22,7 +22,7 @@ public class AlbumInfo {
         this.tracks = tracks;
     }
 
-    public static List<AlbumInfo> setData(){
+    public static List<AlbumInfo> setData() {
         List<AlbumInfo> albums;
         albums = new ArrayList<>();
 
@@ -39,7 +39,7 @@ public class AlbumInfo {
         chiefTracks.add(new TrackInfo("4:23", "Springsteen"));
         chiefTracks.add(new TrackInfo("4:02", "I'm Gettin' Stoned"));
         chiefTracks.add(new TrackInfo("2:39", "Over When It's Over"));
-        albums.add(new AlbumInfo(R.drawable.echurch, "Eric Church", "Chief", chiefTracks.size(), 2011, "EMI Nashville",chiefTracks));
+        albums.add(new AlbumInfo(R.drawable.echurch, "Eric Church", "Chief", chiefTracks.size(), 2011, "EMI Nashville", chiefTracks));
 
         List<TrackInfo> cfwmTracks;
         cfwmTracks = new ArrayList<>();
@@ -56,7 +56,7 @@ public class AlbumInfo {
         cfwmTracks.add(new TrackInfo("2:53", "Brazil"));
         cfwmTracks.add(new TrackInfo("2:44", "Blue Hawaii"));
         cfwmTracks.add(new TrackInfo("3:49", "It's Nice To Go A Trav'ling"));
-        albums.add(new AlbumInfo(R.drawable.fsinatra, "Frank Sinatra", "Come Fly With Me", cfwmTracks.size(), 1958, "Capitol Records",cfwmTracks));
+        albums.add(new AlbumInfo(R.drawable.fsinatra, "Frank Sinatra", "Come Fly With Me", cfwmTracks.size(), 1958, "Capitol Records", cfwmTracks));
 
         List<TrackInfo> pmTracks;
         pmTracks = new ArrayList<>();
@@ -70,7 +70,7 @@ public class AlbumInfo {
         pmTracks.add(new TrackInfo("3:35", "If I Only Had the Words(To Tell You)"));
         pmTracks.add(new TrackInfo("3:20", "Somewhere Along The Line"));
         pmTracks.add(new TrackInfo("7:18", "Captian Jack"));
-        albums.add(new AlbumInfo(R.drawable.bjoel, "Billy Joel", "Piano Man", pmTracks.size(), 1973, "Columbia",pmTracks));
+        albums.add(new AlbumInfo(R.drawable.bjoel, "Billy Joel", "Piano Man", pmTracks.size(), 1973, "Columbia", pmTracks));
 
         List<TrackInfo> faithTracks;
         faithTracks = new ArrayList<>();
@@ -85,7 +85,7 @@ public class AlbumInfo {
         faithTracks.add(new TrackInfo("4:35", "Kissing a Fool"));
         faithTracks.add(new TrackInfo("6:30", "Hard Day (Shep Pettibone Remix)"));
         faithTracks.add(new TrackInfo("3:48", "A Last Request"));
-        albums.add(new AlbumInfo(R.drawable.gmichael, "George Michael", "Faith", faithTracks.size(), 1987, "Epic Records",faithTracks));
+        albums.add(new AlbumInfo(R.drawable.gmichael, "George Michael", "Faith", faithTracks.size(), 1987, "Epic Records", faithTracks));
 
         List<TrackInfo> iauTracks;
         iauTracks = new ArrayList<>();
@@ -102,7 +102,7 @@ public class AlbumInfo {
         iauTracks.add(new TrackInfo("3:40", "Broken Flame"));
         iauTracks.add(new TrackInfo("3:52", "Back To You"));
         iauTracks.add(new TrackInfo("3:11", "All For You"));
-        albums.add(new AlbumInfo(R.drawable.alexsierra, "Alex & Sierra", "It's About Us", iauTracks.size(), 2014, "Sony",iauTracks));
+        albums.add(new AlbumInfo(R.drawable.alexsierra, "Alex & Sierra", "It's About Us", iauTracks.size(), 2014, "Sony", iauTracks));
 
         List<TrackInfo> imTracks;
         imTracks = new ArrayList<>();
@@ -114,7 +114,7 @@ public class AlbumInfo {
         imTracks.add(new TrackInfo("10:45", "Domino"));
         imTracks.add(new TrackInfo("3:51", "Throwing It All Away"));
         imTracks.add(new TrackInfo("4:49", "The Brazilian"));
-        albums.add(new AlbumInfo(R.drawable.genisis, "Genisis", "Invisible Touch", imTracks.size(), 1986, "Atlantic Records",imTracks));
+        albums.add(new AlbumInfo(R.drawable.genisis, "Genisis", "Invisible Touch", imTracks.size(), 1986, "Atlantic Records", imTracks));
 
         List<TrackInfo> nevermindTracks;
         nevermindTracks = new ArrayList<>();
@@ -130,7 +130,7 @@ public class AlbumInfo {
         nevermindTracks.add(new TrackInfo("3:27", "Stay Away"));
         nevermindTracks.add(new TrackInfo("2:52", "On a Plain"));
         nevermindTracks.add(new TrackInfo("20:35", "Something in the Way"));
-        albums.add(new AlbumInfo(R.drawable.nirvana, "Nirvana", "Nevermind", nevermindTracks.size(), 1991, "DGC Records ORG",nevermindTracks));
+        albums.add(new AlbumInfo(R.drawable.nirvana, "Nirvana", "Nevermind", nevermindTracks.size(), 1991, "DGC Records ORG", nevermindTracks));
 
         List<TrackInfo> notwTracks;
         notwTracks = new ArrayList<>();
@@ -145,7 +145,7 @@ public class AlbumInfo {
         notwTracks.add(new TrackInfo("3:07", "Who Needs You"));
         notwTracks.add(new TrackInfo("6:27", "It's Late"));
         notwTracks.add(new TrackInfo("3:31", "My Melancholy Blues"));
-        albums.add(new AlbumInfo(R.drawable.queen, "Queen", "News of the World", notwTracks.size(), 1977, "EMI",notwTracks));
+        albums.add(new AlbumInfo(R.drawable.queen, "Queen", "News of the World", notwTracks.size(), 1977, "EMI", notwTracks));
 
         List<TrackInfo> littTracks;
         littTracks = new ArrayList<>();
@@ -161,7 +161,7 @@ public class AlbumInfo {
         littTracks.add(new TrackInfo("3:09", "It's All in the Game"));
         littTracks.add(new TrackInfo("2:48", "When Sunny Gets Blue"));
         littTracks.add(new TrackInfo("3:02", "Love Is the Thing"));
-        albums.add(new AlbumInfo(R.drawable.ncole, "Nat King Cole", "Love Is the Thing", littTracks.size(), 1957, "Capitol Records",littTracks));
+        albums.add(new AlbumInfo(R.drawable.ncole, "Nat King Cole", "Love Is the Thing", littTracks.size(), 1957, "Capitol Records", littTracks));
 
         List<TrackInfo> itwlTracks;
         itwlTracks = new ArrayList<>();
@@ -180,8 +180,12 @@ public class AlbumInfo {
         itwlTracks.add(new TrackInfo("4:53", "I Like It Heavy"));
         itwlTracks.add(new TrackInfo("3:08", "Jumb The Gun"));
         itwlTracks.add(new TrackInfo("4:09", "Unapologetic"));
-        albums.add(new AlbumInfo(R.drawable.halestorm, "Halestorm", "Into the Wild Life", itwlTracks.size(), 2015, "Atlanta Records",itwlTracks));
+        albums.add(new AlbumInfo(R.drawable.halestorm, "Halestorm", "Into the Wild Life", itwlTracks.size(), 2015, "Atlanta Records", itwlTracks));
 
         return albums;
+    }
+
+    public static List<TrackInfo> getTracks(List<AlbumInfo> albums, int position) {
+        return albums.get(position).tracks;
     }
 }

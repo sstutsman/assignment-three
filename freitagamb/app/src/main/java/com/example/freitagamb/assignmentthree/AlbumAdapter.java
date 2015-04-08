@@ -2,7 +2,9 @@ package com.example.freitagamb.assignmentthree;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder> {
@@ -30,7 +33,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
         holder.year.setText("("+Integer.toString(current.year)+")");
         holder.publisher.setText(current.publisher);
         holder.trackCnt.setText(Integer.toString(current.trackCnt)+ " tracks on disc");
-
+     //   holder.tracks = current.tracks;
     }
 
     @Override
@@ -56,6 +59,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
         TextView publisher;
         TextView trackCnt;
         CardView cv;
+      //  RecyclerView rv;
+      //  List<TrackInfo> tracks;
 
         public AlbumViewHolder(View itemView) {
             super(itemView);
@@ -67,14 +72,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
             publisher = (TextView) itemView.findViewById(R.id.txtPublisher);
             trackCnt = (TextView) itemView.findViewById(R.id.txtTrackCnt);
             cv = (CardView) itemView.findViewById(R.id.card_view);
+          //  rv = (RecyclerView) itemView.findViewById(R.id.trackRecyclerView);
             cv.setOnClickListener(this);
         }
         public void onClick(View v) {
             Context context = v.getContext();
-            Toast.makeText(context, "item clicked at " + getPosition(),Toast.LENGTH_SHORT).show();
             Intent intObj = new Intent(context,more_info.class);
-            intObj.putExtra("pos", getPosition());
-            intObj.putExtra("artist", albumList.get(getPosition()).artist);
+            intObj.putExtra("pos", (int) getPosition());
             context.startActivity(intObj);
         }
 

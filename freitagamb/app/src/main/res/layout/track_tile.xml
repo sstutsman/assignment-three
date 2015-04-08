@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp">
+
+    <TextView
+        android:id="@+id/txtTrackNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1."
+        android:layout_alignParentLeft="true"
+        android:textSize="15sp"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/lt_grey" />
+
+    <TextView
+        android:id="@+id/txtTrackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track Title Here"
+        android:layout_toEndOf="@id/txtTrackNum"
+        android:layout_alignBaseline="@id/txtTrackNum"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txtTrackLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3:45"
+        android:textSize="15sp"
+        android:textColor="@color/lt_grey"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/txtTrackNum" />
+</RelativeLayout>

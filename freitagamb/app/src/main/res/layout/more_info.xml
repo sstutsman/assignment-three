@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:text="Chief"
         android:layout_marginRight="5sp"
-        android:textColor="@color/blue"
-        android:textSize="25sp" />
+        android:textColor="@color/accent"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/txtYear"
@@ -41,29 +41,30 @@
         android:text="(2011)"
         android:textColor="#A9A9A9"
         android:textSize="12sp" />
-
+    </LinearLayout>
     <TextView
         android:id="@+id/txtArtistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eric Church"
-        android:textSize="18sp" />
-    </LinearLayout>
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/txtPublisher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="Columbia Records"
         android:gravity="center_vertical"
         android:textSize="12sp"
-        android:textColor="#A9A9A9"
-        android:layout_marginLeft="5dp"/>
-    <TextView
-        android:id="@+id/txtTrackCnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="11 Tracks on disc"
-        android:gravity="center_vertical"
-        android:textSize="13sp"
-        android:layout_marginTop="11dp"/>
+        android:textColor="@color/dk_blue"/>
+
+       <android.support.v7.widget.RecyclerView
+           android:id="@+id/trackRecyclerView"
+           android:layout_marginTop="15dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           >
+       </android.support.v7.widget.RecyclerView>
 </LinearLayout>

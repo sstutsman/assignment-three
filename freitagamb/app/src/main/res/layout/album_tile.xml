@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
@@ -13,17 +14,18 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="@color/tile_bkg"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:backgroundTint="#CFD8DC">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:paddingLeft="10dp"
-            android:background="@color/tile_title"
+            android:background="@color/lt_blue"
             android:text="Chief - Eric Church"
             android:gravity="center_vertical"
-            android:textColor="@android:color/white"
+            android:textColor="#FFFFFF"
             android:textSize="14dp" />
 
         <ImageView
@@ -42,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chief"
-            android:textColor="@color/blue"
+            android:textColor="#FFFFFF"
             android:gravity="center_vertical"
             android:textSize="22sp"
             android:layout_below="@id/title"
@@ -56,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="(2011)"
             android:gravity="center_vertical"
-            android:textColor="#A9A9A9"
+            android:textColor="#607D8B"
             android:textSize="12sp"
             android:layout_below="@id/txtAlbumName"
             android:layout_alignStart="@id/txtAlbumName" />
@@ -68,7 +70,7 @@
             android:text="Columbia Records"
             android:gravity="center_vertical"
             android:textSize="12sp"
-            android:textColor="#A9A9A9"
+            android:textColor="#607D8B"
             android:layout_below="@id/txtAlbumName"
             android:layout_toEndOf="@id/txtYear"
             android:layout_marginLeft="5dp" />
