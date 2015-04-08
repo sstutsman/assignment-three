@@ -1,5 +1,8 @@
 package com.maddux.assignmentthree;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+
 /**
  * Created by My Laptop on 4/7/2015.
  */
@@ -9,8 +12,9 @@ public class Album {
     private int trackCount;
     private int year;
     private String publisher;
+    private int art;
 
-    public Album(String name, String artist, int trackCount, int year, String publisher) {
+    public Album(int art, String name, String artist, int trackCount, int year, String publisher) {
         this.name = name;
         this.artist = artist;
         this.trackCount = trackCount;
@@ -56,5 +60,13 @@ public class Album {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public int getArt() {
+        return art;
+    }
+
+    public void setArt(int art) {
+        this.art = art;
     }
 }

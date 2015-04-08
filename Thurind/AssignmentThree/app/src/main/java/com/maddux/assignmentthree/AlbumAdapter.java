@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -35,11 +36,12 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.albumName.setText("Name: " + albums.get(position).getName());
-        holder.albumArtist.setText("Artist: " + albums.get(position).getArtist());
+        holder.albumArt.setImageResource(albums.get(position).getArt());
+        holder.albumName.setText(albums.get(position).getName());
+        holder.albumArtist.setText(albums.get(position).getArtist());
         holder.albumTrackCount.setText("Track Count: " + albums.get(position).getTrackCount());
         holder.albumYear.setText("Year: " + albums.get(position).getYear());
-        holder.albumPublisher.setText("Publisher: " + albums.get(position).getPublisher());
+        holder.albumPublisher.setText(albums.get(position).getPublisher());
     }
 
     @Override
@@ -49,6 +51,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
         ItemClickListener listener;
 
+        ImageView albumArt;
         TextView albumName;
         TextView albumArtist;
         TextView albumTrackCount;
@@ -59,12 +62,14 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         public ViewHolder(View itemView, ItemClickListener listener) {
             super(itemView);
             this.listener = listener;
+            albumArt = (ImageView) itemView.findViewById((R.id.album_art));
             albumName = (TextView) itemView.findViewById(R.id.album_name);
             albumArtist = (TextView) itemView.findViewById(R.id.album_artist);
             albumTrackCount = (TextView) itemView.findViewById(R.id.album_track);
             albumYear = (TextView) itemView.findViewById(R.id.album_year);
             albumPublisher = (TextView) itemView.findViewById(R.id.album_publisher);
 
+            albumArt.setOnClickListener(this);
             albumName.setOnClickListener(this);
             albumArtist.setOnClickListener(this);
             albumTrackCount.setOnClickListener(this);

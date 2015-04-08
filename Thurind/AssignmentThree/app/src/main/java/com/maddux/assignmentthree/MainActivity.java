@@ -17,7 +17,6 @@ public class MainActivity extends Activity {
 
         getFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, new RecyclerViewFragment())
-                        // Don't forget this nice little animation!
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
 
