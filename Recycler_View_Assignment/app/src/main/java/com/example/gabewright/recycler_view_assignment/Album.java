@@ -14,14 +14,17 @@ public class Album{
     private String year;
     private String publisher;
     private Drawable art;
+    int drawableint;
 
-    public Album(String name, String artist, String tcount, String year, String publisher, Drawable art){
+    public Album(String name, String artist, String tcount, String year, String publisher, Drawable art, int drawableint){
         this.name = name;
         this.artist = artist;
         this.tcount = tcount;
         this.year = year;
         this.publisher = publisher;
         this.art = art;
+        this.drawableint = drawableint;
+
 
     }
 
@@ -42,5 +45,7 @@ public class Album{
     public String getPublisher() { return publisher; }
 
     public Drawable getArt() {return art; }
+
+    public int getDrawableint() {return drawableint;}
 
 }

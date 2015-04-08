@@ -54,17 +54,29 @@ public class RecyclerViewFragment extends Fragment {
         Drawable third = res.getDrawable(R.drawable.third);
         Drawable adventures = res.getDrawable(R.drawable.adventures);
         Drawable manonmoon = res.getDrawable(R.drawable.manonmoon);
+
+        int di1 = R.drawable.strangeclouds;
+        int di2 = R.drawable.boston;
+        int di3 = R.drawable.billyjoel;
+        int di4 = R.drawable.gnr;
+        int di5 = R.drawable.iv;
+        int di6 = R.drawable.rush;
+        int di7 = R.drawable.breakfast;
+        int di8 = R.drawable.third;
+        int di9 = R.drawable.adventures;
+        int di10 = R.drawable.manonmoon;
+
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album("Strange Clouds", "B.o.B", "15 Songs", "2012", "Atlantic Recording Corporation", strangeclouds));
-        albums.add(new Album("Boston", "Boston", "8 Songs", "1976", "Epic Records", boston));
-        albums.add(new Album("Greatest Hits, Vols. 1 & 2", "Billy Joel", "25 Songs", "1973", "Sony BMG Music Entertainment", billyjoel));
-        albums.add(new Album("Appetite for Destruction", "Guns N' Roses", "12 Songs", "1987", "Geffen Records", gnr));
-        albums.add(new Album("Led Zeppelin IV", "Led Zeppelin", "8 Songs", "1971", "Atlantic Recording Corporation", iv));
-        albums.add(new Album("The Spirit of Radio: Greatest Hits (1974 - 1987)", "Rush", "16 Songs", "2013", "The Island Def Jam Music Group", rush));
-        albums.add(new Album("Breakfast", "Chiddy Bang", "14 Songs", "2012", "Parlophone Records Ltd", breakfast));
-        albums.add(new Album("Third Eye Blind: A Collection", "Third Eye Blind", "21 Songs", "2006", "Elektra Entertainment Co.", third));
-        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray", "B.o.B", "12 Songs", "2010", "Atlantic Recording Corporation", adventures));
-        albums.add(new Album("Man On The Moon: The End of Day", "Kid Cudi", "15 Songs", "2009", "Universal Motown Records", manonmoon));
+        albums.add(new Album("Strange Clouds", "B.o.B", "15 Songs", "2012", "Atlantic Recording Corporation", strangeclouds, di1));
+        albums.add(new Album("Boston", "Boston", "8 Songs", "1976", "Epic Records", boston, di2));
+        albums.add(new Album("Greatest Hits, Vols. 1 & 2", "Billy Joel", "25 Songs", "1973", "Sony BMG Music Entertainment", billyjoel, di3));
+        albums.add(new Album("Appetite for Destruction", "Guns N' Roses", "12 Songs", "1987", "Geffen Records", gnr, di4));
+        albums.add(new Album("Led Zeppelin IV", "Led Zeppelin", "8 Songs", "1971", "Atlantic Recording Corporation", iv, di5));
+        albums.add(new Album("The Spirit of Radio: Greatest Hits (1974 - 1987)", "Rush", "16 Songs", "2013", "The Island Def Jam Music Group", rush, di6));
+        albums.add(new Album("Breakfast", "Chiddy Bang", "14 Songs", "2012", "Parlophone Records Ltd", breakfast, di7));
+        albums.add(new Album("Third Eye Blind: A Collection", "Third Eye Blind", "21 Songs", "2006", "Elektra Entertainment Co.", third, di8));
+        albums.add(new Album("B.o.B Presents: The Adventures of Bobby Ray", "B.o.B", "12 Songs", "2010", "Atlantic Recording Corporation", adventures, di9));
+        albums.add(new Album("Man On The Moon: The End of Day", "Kid Cudi", "15 Songs", "2009", "Universal Motown Records", manonmoon, di10));
         return albums;
 
     }

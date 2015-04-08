@@ -34,13 +34,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 //                String publisher = albums.get(position).getYear();
 //                String tcount = albums.get(position).getTcount();
 //                String artist = albums.get(position).getTcount();
-//                Drawable art = albums.get(position).getArt();
+//                int  artint = albums.get(position).getDrawableint();
 //                intent.putExtra("name", name);
 //                intent.putExtra("year", year);
 //                intent.putExtra("publisher", publisher);
 //                intent.putExtra("tcount", tcount);
 //                intent.putExtra("artist", artist);
-//                intent.putExtra("art", art);
+//                intent.putExtra("artint", artint);
 //
 //                Album album = albums.get(position);
 //                intent.putExtra("album", album);
@@ -96,6 +96,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         @Override
         public void onClick(View view) {
             listener.onItemClick(view, getPosition());
+
 
         }
 
