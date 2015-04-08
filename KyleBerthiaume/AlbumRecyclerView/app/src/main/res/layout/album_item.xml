@@ -46,6 +46,16 @@
 
         <TextView
             android:textColor="#B26200"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:text="2014"
+            android:textSize="13sp"
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#B26200"
             android:text="Dummy Pub"
             android:layout_gravity="right"
             android:paddingBottom="10dp"

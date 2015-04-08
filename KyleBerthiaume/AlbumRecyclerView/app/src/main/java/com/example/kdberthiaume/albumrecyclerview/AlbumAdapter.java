@@ -50,15 +50,13 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
                 intent.putExtra("name", albums.get(position).getAlbumName() + "\n" +
                         albums.get(position).getArtist() + "\n" +
                         albums.get(position).getTrackCount() + " tracks" + "\n" +
+                        albums.get(position).getYear() + "\n" +
                         albums.get(position).getPub() + "\n");
 
                 intent.putExtra("tracks", albums.get(position).getTracks());
 
                 // pass the image
-                Bitmap image = ((BitmapDrawable)albums.get(position).getCoverArt()).getBitmap();
-
-                // pass the image
-                intent.putExtra("image", image);
+                intent.putExtra("image", Integer.toString(albums.get(position).getCoverArt()));
 
                 // start the new Activity
                 context.startActivity(intent);
@@ -75,9 +73,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         holder.tvArtist.setText(albums.get(position).getArtist());
         holder.tvTrackAmount.setText(albums.get(position).getTrackCount());
         holder.tvPublisher.setText(albums.get(position).getPub());
+        holder.tvYear.setText(albums.get(position).getYear());
 
         // Setting AlbumArt image
-        holder.ivAlbumArt.setImageDrawable(albums.get(position).getCoverArt());
+        holder.ivAlbumArt.setImageResource(albums.get(position).getCoverArt());
 
     }
 
@@ -93,6 +92,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         TextView tvAlbum;
         TextView tvTrackAmount;
         TextView tvPublisher;
+        TextView tvYear;
         ImageView ivAlbumArt;
 
 
@@ -106,6 +106,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
             tvTrackAmount = (TextView) itemView.findViewById(R.id.tv_track_amount);
             tvPublisher = (TextView) itemView.findViewById(R.id.tv_publisher_name);
             ivAlbumArt = (ImageView) itemView.findViewById(R.id.iv_album_art);
+            tvYear = (TextView) itemView.findViewById(R.id.tv_year);
 
             tvAlbum.setOnClickListener(this);
             ivAlbumArt.setOnClickListener(this);

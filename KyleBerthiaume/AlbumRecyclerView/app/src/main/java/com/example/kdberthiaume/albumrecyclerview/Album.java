@@ -7,14 +7,15 @@ import android.media.Image;
  * Created by smlpookey on 3/30/2015.
  */
 public class Album {
-    private Drawable coverArt;
+    private int coverArt;
     private String albumName;
     private String artist;
     private String trackCount;
     private String publisher;
+    private String year;
     private String tracks;
 
-    public  Album(Drawable art, String albumName, String artist, String trackCount, String pub ,
+    public  Album(int art, String albumName, String artist, String trackCount, String year, String pub ,
                   String tracks){
         this.coverArt = art;
         this.albumName = albumName;
@@ -22,6 +23,7 @@ public class Album {
         this.trackCount = "Track count: " + trackCount;
         this.publisher = pub;
         this.tracks = tracks;
+        this.year = year;
 
     }
 
@@ -41,11 +43,15 @@ public class Album {
         return publisher;
     }
 
-    public Drawable getCoverArt(){
+    public int getCoverArt(){
         return coverArt;
     }
 
     public String getTracks() {
         return tracks;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

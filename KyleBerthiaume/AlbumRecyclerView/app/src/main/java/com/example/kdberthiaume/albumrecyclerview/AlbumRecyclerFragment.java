@@ -58,8 +58,8 @@ public class AlbumRecyclerFragment extends Fragment {
 
     private List<Album> mockData (){
         List<Album> albums = new ArrayList<>();
-        albums.add(new Album(getResources().getDrawable(R.drawable.pretty_reckless2),
-                "Going to Hell", "The Pretty reckless", "12", "Interscope Records",
+        albums.add(new Album(R.drawable.pretty_reckless2,
+                "Going to Hell", "The Pretty reckless", "12", "2014" ,"Interscope Records",
                 "1.	 \"Follow Me Down\"\n"+
                 "2.	 \"Going to Hell\"\n"+
                 "3.	 \"Heaven Knows\"\n"+
@@ -72,8 +72,8 @@ public class AlbumRecyclerFragment extends Fragment {
                 "10. \"Why'd You Bring a Shotgun to the Party\"\n"+
                 "11. \"F****d Up World\"\n"+
                 "12. \"Waiting for a Friend\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.avenged_sevenfold),
-                "Hail to the King", "Avenged Sevenfold", "10", "Warner Bros.",
+        albums.add(new Album(R.drawable.avenged_sevenfold,
+                "Hail to the King", "Avenged Sevenfold", "10", "2013" ,"Warner Bros.",
                 "1.	 \"Shepherd of Fire\"\n"+
                 "2.	 \"Hail to the King\"\n"+
                 "3.	 \"Doing Time\"\n"+
@@ -85,8 +85,8 @@ public class AlbumRecyclerFragment extends Fragment {
                 "9.	 \"Planets\"\n"+
                 "10. \"Acid Rain\"\n"+
                 "11. \"St. James\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.charlie_hunt), "Steady Groovin",
-                "Charlie Hunt", "12", "Blue Note Records",
+        albums.add(new Album(R.drawable.charlie_hunt, "Steady Groovin",
+                "Charlie Hunt", "12", "2000" ,"Blue Note Records",
                 "1.	 \"Kool\"\n"+
                 "2.	 \"Do Like Eddie\"\n"+
                 "3.	 \"Chariots\"\n"+
@@ -98,8 +98,8 @@ public class AlbumRecyclerFragment extends Fragment {
                 "9.	 \"She's So Lucky\"\n"+
                 "10. \"Twang\"\n"+
                 "11. \"Fat Lip\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.three_years_hollow),
-                "The Cracks", "Three Years Hollow", "12", "Imagine Records",
+        albums.add(new Album(R.drawable.three_years_hollow,
+                "The Cracks", "Three Years Hollow", "12", "2014", "Imagine Records",
                 "1.	 \"The Devil's Slave\"\n"+
                 "2.	 \"Chemical Ride\"\n"+
                 "3.	 \"For Life (feat. Clint Lowery)\"\n"+
@@ -112,8 +112,8 @@ public class AlbumRecyclerFragment extends Fragment {
                 "10. \"Take the World\"\n"+
                 "11. \"Lost\"\n"+
                 "12. \"Remember (Remastered)\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.romantic_rebel),
-                "Romantic Rebel", "Romantic Rebel", "11", "Interscope Records",
+        albums.add(new Album(R.drawable.romantic_rebel,
+                "Romantic Rebel", "Romantic Rebel", "11", "2013", "Interscope Records",
                 "1.	 \"Alive\"\n"+
                 "2.	 \"Disappear\"\n"+
                 "3.	 \"Lie (Feat. Brendon Small)\"\n"+
@@ -125,20 +125,8 @@ public class AlbumRecyclerFragment extends Fragment {
                 "9.	 \"New Way to Sin\"\n"+
                 "10. \"Bad for Me\"\n"+
                 "11. \"Madness\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.demon_days), "Demon Days",
-                "Gorillaz", "15", "Parlophone",
-                "1.	 \"Speak to Me\"\n"+
-                "2.	 \"Breathe\"\n"+
-                "3.	 \"On the Run\"\n"+
-                "4.	 \"Time\"\n"+
-                "5.	 \"The Great Gig in the Sky\"\n"+
-                "6.	 \"Money\"\n"+
-                "7.	 \"Us and Them\"\n"+
-                "8.	 \"Any Colour You Like\"\n"+
-                "9.	 \"Brain Damage\"\n"+
-                "10. \"Eclipse\"\n"));
-        albums.add(new Album(getResources().getDrawable(R.drawable.dreamshade_photographs),
-                "The Gift of Life", "Dreamshade", "10", "Spinefarm",
+        albums.add(new Album(R.drawable.demon_days, "Demon Days",
+                "Gorillaz", "15", "2005", "Parlophone",
                 "1.	 \"Intro\"\n"+
                 "2.	 \"Last Living Souls\"\n"+
                 "3.	 \"Kids With Guns\"\n"+
@@ -154,6 +142,18 @@ public class AlbumRecyclerFragment extends Fragment {
                 "13. \"Fire Coming Out of the Monkey's Head\"\n"+
                 "14. \"Don't Get Lost in Heaven\"\n"+
                 "15. \"Demon Days\"\n"));
+        albums.add(new Album(R.drawable.dreamshade_photographs,
+                "The Gift of Life", "Dreamshade", "10", "2013", "Spinefarm",
+                "1.	 \"Photographs\"\n"+
+                "2.	 \"Your Voice\"\n"+
+                "3.	 \"The Gift Life\"\n"+
+                "4.	 \"Sandcastles\"\n"+
+                "5.	 \"Consumed Future\"\n"+
+                "6.	 \"Our Flame\"\n"+
+                "7.	 \"Late Confessions\"\n"+
+                "8.	 \"Sincere\"\n"+
+                "9.	 \"Elisabeth\"\n"+
+                "10. \"Wants & Needs\"\n"));
 
         return albums;
 
