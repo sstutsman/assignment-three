@@ -1,6 +1,7 @@
 package com.albumlist.albumlist;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -10,15 +11,20 @@ import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+    private Button button;
 
-    public void buttonOnClick(View v) {
-        ((Button) v).setText("CLICKED");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button = (Button) findViewById(R.id.start_screen_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondaryActivity.class));
+            }
+        });
     }
 
     @Override
@@ -42,5 +48,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }

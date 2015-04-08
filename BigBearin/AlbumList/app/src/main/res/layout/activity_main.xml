@@ -6,7 +6,6 @@
     android:background="@drawable/low_poly"
     android:debuggable="true"
     android:orientation="horizontal"
-
     tools:context=".MainActivity">
 
 
