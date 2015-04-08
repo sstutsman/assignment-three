@@ -2,31 +2,23 @@ package com.example.julio.albumstore;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.zip.Inflater;
+
 
 
 public class AlbumDetailActivity extends Activity {
 
     Album.Paging trackPaging;
     Album.Track[] tracks;
-    TrackListAdapter trackListAdapter;
 
     Album album;
     @Override
@@ -86,23 +78,11 @@ public class AlbumDetailActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.w("Kobe the CAT","onStop");
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
         TrackListAdapter.mediaPlayer.release();
-        Log.w("Kobe the CAT", "onDestroy");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.w("Kobe the CAT","onPause");
 
     }
+
+
+
 }
 

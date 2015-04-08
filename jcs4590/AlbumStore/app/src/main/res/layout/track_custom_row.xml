@@ -17,8 +17,8 @@
         android:layout_toStartOf="@+id/previewImageButton" />
 
     <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:id="@+id/previewImageButton"
         android:layout_alignTop="@+id/trackNameTextView"
         android:layout_alignParentEnd="true"
@@ -26,6 +26,8 @@
         android:layout_margin="5dp"
         android:src="@drawable/playicon"
         android:focusable="false"
+        android:scaleType="fitCenter"
+        android:padding="0dp"
 
         />
 

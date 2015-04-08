@@ -7,21 +7,23 @@
     tools:context="com.example.julio.albumstore.firstActivity">
 
     <ImageButton
-        android:layout_width="200dp"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:text="LogIn Spotify"
         android:id="@+id/button"
         android:src="@drawable/loginbutton"
-        android:scaleType="fitStart"
         android:adjustViewBounds="true"
         android:background="#80000000"
         android:layout_below="@+id/imageButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="80dp"
+        android:scaleType="fitCenter"
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/imageButton"
         android:src="@drawable/crackedspotify"
         android:background="#80000000"

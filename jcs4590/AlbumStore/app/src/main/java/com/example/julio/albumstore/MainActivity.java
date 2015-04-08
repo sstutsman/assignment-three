@@ -3,60 +3,39 @@ package com.example.julio.albumstore;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Entity;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.util.LogWriter;
-import android.support.v7.widget.*;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
+
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
+
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -69,25 +48,18 @@ public class MainActivity  extends Activity {
     private RecyclerView albumsRecyclerView;
     private RecyclerView.Adapter albumReyclerViewAdpter;
     StaggeredGridLayoutManager layoutManager;
-    private Album[] dataSet;
     private List<Album> dataSetList;
 
     private static final String clientID = "6b7e14da031f4d72b6a3301c262f5647";
     private static final String clientSecret = "a00298d93f164681b308aa3192909b19";
     private SharedPreferences userData;
     private HttpClient httpClient;
-    private String userToken;
     private CurrentSession currentSession;
-    private Map<String, Object> albumsMap;
     private HttpResponse response;
     private String userCode;
-    private static Timer timer;
-    private TimerTask timerTask;
-    private final Handler timerHandler = new Handler();
     private String refreshResponseString;
 
 
-    private String[] albums;
 
 
     @Override
@@ -97,10 +69,6 @@ public class MainActivity  extends Activity {
         userData = getSharedPreferences("UserData", Context.MODE_PRIVATE);
         currentSession = new Gson().fromJson(userData.getString("session", null), CurrentSession.class);
         dataSetList = new ArrayList<Album>();
-
-//        if(currentSession != null){
-//            startTimer();
-//        }
 
 
         //download album data
@@ -116,10 +84,6 @@ public class MainActivity  extends Activity {
 
     }
 
-    public void asyncComplete(boolean success) {
-        albumReyclerViewAdpter.notifyDataSetChanged();
-
-    }
 
     @Override
 
@@ -235,22 +199,6 @@ public class MainActivity  extends Activity {
 
 
 
-    public class RefreshToken extends AsyncTask<Void,Void,Void>{
-
-
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-           refreshToken();
-
-            return null;
-        }
-
-
-
-
-    }
     private void refreshToken() {
 
         HttpPost httpPost = new HttpPost("https://accounts.spotify.com/api/token");
@@ -299,11 +247,9 @@ public class MainActivity  extends Activity {
             JsonParser parser = new JsonParser();
             JsonObject obj = parser.parse(responseString).getAsJsonObject();
             if (obj.has("error")) {
-                Log.w("Kobe the at", "blah");
                 refreshToken();
                 getNewReleases();
             } else {
-                int albumsNumber = obj.get("albums").getAsJsonObject().get("items").getAsJsonArray().size();
                 Uri[] albumUrlArray = new Uri[20];
                 String albumIDString = "";
                 for (int i = 0; i < albumUrlArray.length; i++) {
