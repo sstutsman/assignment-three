@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/WhiteSmoke">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_weight="1"
+        android:background="@drawable/born_to_run"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_weight="2"
+        android:paddingLeft="10dp"
+        android:text="@string/album_starter_string"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/DarkGray" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="@+id/textView2"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:gravity="right"
+        android:paddingRight="10dp"
+        android:text="Born To Run\n\nBruce Springsteen\n\n8\n\n1975\n\nColumbia\n\nBorn to Run\n\n39:26min"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/DarkGray" />
+
+</RelativeLayout>
