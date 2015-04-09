@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AlbumList</string>
+    <string name="app_name2">SecondaryList</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_string">Welcome To My Program!</string>
+    <string name="main_button_string">Press To Continue</string>
+    <string name="escape_string">EscapeActivity</string>
+    <string name="born_string">BornActivity</string>
+    <string name="icon_string">icon</string>
+    <string name="album_starter_string">Title:\n\nArtist:\n\nTrack Count:\n\nYear:\n\nPublisher:\n\nSingle:\n\nLength:</string>
+    <string name="dark_string">DarkActivity</string>
+
+</resources>

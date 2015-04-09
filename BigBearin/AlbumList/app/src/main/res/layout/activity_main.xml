@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/low_poly"
+    android:debuggable="true"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/start_screen_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="@string/main_string"
+        android:textColor="@color/AliceBlue"
+        android:textSize="50sp"
+        android:contentDescription="@string/icon_string"
+        android:src="@drawable/ic_launcher"/>
+
+
+    <Button
+        android:id="@+id/start_screen_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:gravity="center_horizontal"
+        android:onClick="buttonOnClick"
+        android:text="@string/main_button_string"
+        android:textAllCaps="false"
+        android:textColor="@color/AliceBlue"
+        android:textSize="30sp" />
+
+</FrameLayout>
