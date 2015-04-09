@@ -1,5 +1,6 @@
 package com.maddux.assignmentthree;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +29,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+                Intent intent = new Intent(view.getContext(), onClickActivity.class);
+                intent.putExtra("Art", albums.get(position).getArt());
+                view.getContext().startActivity(intent);
 
             }
         });
