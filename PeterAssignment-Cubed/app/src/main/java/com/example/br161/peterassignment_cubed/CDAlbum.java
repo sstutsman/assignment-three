@@ -12,20 +12,21 @@ public class CDAlbum {
     private String albumYear;
     private String albumPublisher;
     private String albumGenre;
-    private Drawable albumCover;
-    private String something;
-    private String something2;
-    private String something3;
+    private int albumCover;
 
 
 
-    public CDAlbum(String name, String artist, String trackCount, String year, String publisher)
+
+    public CDAlbum(String albumname, String artist, String trackCount, String year, String publisher, String genre, int albumart)
     {
-        this.albumName = name;
+        this.albumName = albumname;
         this.albumArtist = artist;
         this.albumTrackCount = trackCount;
         this.albumYear = year;
         this.albumPublisher = publisher;
+        this.albumGenre = genre;
+        this.albumCover = albumart;
+
     } // end constructor
 
     public String getAlbumName()        { return albumName; }
@@ -34,7 +35,7 @@ public class CDAlbum {
     public String getAlbumYear()        { return albumYear; }
     public String getAlbumPublisher()   { return albumPublisher; }
     public String getAlbumGenre()       { return albumGenre; }
-    public Drawable getAlbumCover()     { return albumCover; }
+    public int getAlbumCover()     { return albumCover; }
 
 
 }

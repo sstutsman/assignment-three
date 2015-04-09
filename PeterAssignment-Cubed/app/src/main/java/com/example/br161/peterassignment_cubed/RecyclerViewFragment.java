@@ -36,12 +36,18 @@ public class RecyclerViewFragment extends Fragment {
         recyclerAlbums.setLayoutManager(layoutManager);
 
         List<CDAlbum> myCollection = importAlbums();
-        recyclerAlbums.setAdapter(new CDAdapter());
+        recyclerAlbums.setAdapter(new CDAdapter(myCollection));
 
     }
-}
+
+
+    //(String albumname, String artist, String trackCount, String year, String publisher, String genre, Drawable albumart)
 
 private List<CDAlbum> importAlbums() {
     List<CDAlbum> myCollection = new ArrayList<>();
+    myCollection.add(new CDAlbum("Beyonce", "Beyonce", "14", "2013", "Colombia", "Alternative R&B", R.drawable.beyonce_albumcover_xxhd));
+
+    return myCollection;
+}
 
 }
