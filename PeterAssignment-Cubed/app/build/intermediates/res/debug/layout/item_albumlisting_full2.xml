@@ -4,30 +4,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="15dp"
+
     >
 
         <ImageView
             android:id="@+id/draw_albumcover_full"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:src="@drawable/ic_launcher"
+            android:layout_height="0dp"
+            android:src="@drawable/beyonce_albumcover"
             android:layout_weight="5"/>
 
         <TextView
             android:id="@+id/tv_artistName_full"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:textSize="25sp"
             android:layout_weight="1"
+            android:text="Béyonce"
             android:layout_gravity="center_horizontal"
             android:minHeight="24sp"
             android:paddingTop="8sp"/>
         <TextView
             android:id="@+id/tv_albumName_full"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:textSize="@dimen/abc_text_size_medium_material"
             android:layout_weight="1"
+            android:text="Self Titled"
             android:layout_gravity="center_horizontal"
             android:minHeight="20sp" />
         <!-- Publisher      Year-->
@@ -42,20 +45,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="3"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:text="Colombia"/>
             <TextView
                 android:id="@+id/tv_year_full"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".75"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:text="2013"/>
         </LinearLayout>
 
-        <TextView
+            <TextView
                 android:id="@+id/tv_genre_full"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5" />
+                android:layout_weight=".5"
+                android:text="Alternative R\u0026B"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,8 +77,10 @@
                 <TextView
                     android:id="@+id/tv_trackAmt_full"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="13"/>
             </LinearLayout> <!--End Track Layout-->
 
-</LinearLayout>
+    </LinearLayout>
+
 <!-- From: file:/C:/Users/Peter/Documents/Android/assignment-three/PeterAssignment-Cubed/app/src/main/res/layout/item_albumlisting_full2.xml -->
