@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/oneAlbum_brief"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:orientation="horizontal"
+    android:background="#ffece5e5"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    >
+
+    <ImageView
+        android:id="@+id/draw_albumcover"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_weight=".8"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingLeft="20sp"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/tv_artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_albumName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+    </LinearLayout> <!--End of text display -->
+
+</LinearLayout>

@@ -1300,8 +1300,17 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int beyonce_albumcover=0x7f020033;
-        public static final int fullalbuminfo_template=0x7f020034;
-        public static final int ic_launcher=0x7f020035;
+        public static final int bluesclues_bluesbiggesthits=0x7f020034;
+        public static final int britneyspears_oopsididitagain=0x7f020035;
+        public static final int fullalbuminfo_template=0x7f020036;
+        public static final int ic_launcher=0x7f020037;
+        public static final int nobuouematsu_finalfantasyxoriginalsoundtrack=0x7f020038;
+        public static final int nsync_nostringsattached=0x7f020039;
+        public static final int sheppard_bombsaway=0x7f02003a;
+        public static final int sisqo_unleashthedragon=0x7f02003b;
+        public static final int smashmouth_astrolounge=0x7f02003c;
+        public static final int taylorswift_1989=0x7f02003d;
+        public static final int timeflies_afterhours=0x7f02003e;
     }
     public static final class id {
         public static final int action_bar=0x7f080031;
@@ -1411,11 +1420,13 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int fragment_recycler=0x7f030018;
-        public static final int item_albumlisting_brief=0x7f030019;
-        public static final int item_albumlisting_full=0x7f03001a;
-        public static final int item_albumlisting_full2=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int fragment_main=0x7f030018;
+        public static final int fragment_recycler=0x7f030019;
+        public static final int fragment_recycler_view=0x7f03001a;
+        public static final int item_albumlisting_brief=0x7f03001b;
+        public static final int item_albumlisting_full=0x7f03001c;
+        public static final int item_albumlisting_full2=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int menu_beyonce=0x7f0c0000;
