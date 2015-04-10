@@ -45,6 +45,7 @@ public class CDAdapter extends RecyclerView.Adapter<CDAdapter.ViewHolder> {
                 intent.putExtra("year",myCollection.get(position).getAlbumYear());
                 intent.putExtra("genre", myCollection.get(position).getAlbumGenre());
                 intent.putExtra("trackCt", myCollection.get(position).getAlbumTrackCount());
+                main.startActivity(intent);
             }
         });
         return viewHolder;
@@ -78,7 +79,7 @@ public class CDAdapter extends RecyclerView.Adapter<CDAdapter.ViewHolder> {
             super(itemView);
             this.listener = listener;
 
-            layout = (LinearLayout) itemView.findViewById(R.id.recycler_oneAlbum_brief);
+            layout = (LinearLayout) itemView.findViewById(R.id.oneAlbum_brief);
             imgAlbumCover = (ImageView) itemView.findViewById(R.id.draw_albumcover);
             tvArtist = (TextView) itemView.findViewById(R.id.tv_artistName);
             tvAlbum = (TextView) itemView.findViewById(R.id.tv_albumName);
@@ -91,13 +92,7 @@ public class CDAdapter extends RecyclerView.Adapter<CDAdapter.ViewHolder> {
 
         // This method is just to pass on the onClick event to our individual items! Neat!
         @Override
-        public void onClick(View view) {
-                    //listener.onItemClick(view, getPosition());
-            if(listener!=null) {
-                listener.onItemClick(view, getPosition());
-
-            }
-        }
+        public void onClick(View view) { listener.onItemClick(view, getPosition()); }
 
         // This is the interface which forces our Adapter to implement the OnClickListener
         public interface ItemClickListener {
