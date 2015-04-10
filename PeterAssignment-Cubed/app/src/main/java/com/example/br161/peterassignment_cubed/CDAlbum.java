@@ -8,8 +8,8 @@ import android.graphics.drawable.Drawable;
 public class CDAlbum {
     private String albumName;
     private String albumArtist;
-    private String albumTrackCount;
-    private String albumYear;
+    private Integer albumTrackCount;
+    private Integer albumYear;
     private String albumPublisher;
     private String albumGenre;
     private int albumCover;
@@ -17,7 +17,7 @@ public class CDAlbum {
 
 
 
-    public CDAlbum(String albumname, String artist, String trackCount, String year, String publisher, String genre, int albumart)
+    public CDAlbum(String albumname, String artist, Integer trackCount, Integer year, String publisher, String genre, int albumart)
     {
         this.albumName = albumname;
         this.albumArtist = artist;
@@ -31,8 +31,8 @@ public class CDAlbum {
 
     public String getAlbumName()        { return albumName; }
     public String getAlbumArtist()      { return albumArtist; }
-    public String getAlbumTrackCount()  { return albumTrackCount; }
-    public String getAlbumYear()        { return albumYear; }
+    public Integer getAlbumTrackCount()  { return albumTrackCount; }
+    public Integer getAlbumYear()        { return albumYear; }
     public String getAlbumPublisher()   { return albumPublisher; }
     public String getAlbumGenre()       { return albumGenre; }
     public int getAlbumCover()     { return albumCover; }

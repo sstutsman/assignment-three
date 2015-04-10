@@ -11,7 +11,7 @@
             android:id="@+id/draw_albumcover_full"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:src="@drawable/beyonce_albumcover_xxhd"
+            android:src="@drawable/beyonce_albumcover"
             android:layout_weight="5"/>
 
         <TextView
