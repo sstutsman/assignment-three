@@ -12,9 +12,9 @@ public class Album {
     private int trackCt;
     private int pubYr;
     private String publisher;
-    private Drawable albumArt;
+    private int albumArt;
 
-    public Album(String title, String artist, int trackCt, int pubYr, String publisher, Drawable albumArt){
+    public Album(String title, String artist, int trackCt, int pubYr, String publisher, int albumArt){
         this.title = title;
         this.artist = artist;
         this.trackCt = trackCt;
@@ -63,11 +63,11 @@ public class Album {
         this.publisher = publisher;
     }
 
-    public Drawable getAlbumArt() {
+    public int getAlbumArt() {
         return albumArt;
     }
 
-    public void setAlbumArt(Drawable albumArt) {
+    public void setAlbumArt(int albumArt) {
         this.albumArt = albumArt;
     }
 
