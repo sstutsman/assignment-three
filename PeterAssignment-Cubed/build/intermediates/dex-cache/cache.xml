@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-05e19a4fedb5cf482a04b46f11328bc97f69564d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Peter\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-fd0203783d5abc73a4b460d399f63b53e4d92ee3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\classes-6d5c0d18b05039e53edad6088ee54647c4e25827.jar" />
+    </item>
+    <item
+        jar="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\classes-ebfc5bf94739f5f22131a232dd356eedbdd525d4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\classes-037b0e3334aac082595d1a6d12ec9e434c4dcf13.jar" />
+    </item>
+    <item
+        jar="C:\Users\Peter\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Peter\Documents\Android\assignment-three\PeterAssignment-Cubed\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-78e632969195ff8f79e56dc84baa7c9714346e14.jar" />
+    </item>
+
+</items>

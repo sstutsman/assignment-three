@@ -1,0 +1,6 @@
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler_albums"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.br161.peterassignment_cubed" /><!-- From: file:/C:/Users/Peter/Documents/Android/assignment-three/PeterAssignment-Cubed/app/src/main/res/layout/fragment_recycler.xml -->
