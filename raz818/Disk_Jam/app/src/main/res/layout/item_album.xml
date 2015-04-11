@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:background="#ff020202"
+    android:focusable="false"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:id="@+id/ivAlbumArt"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:src="#ffc70022" />
+
+    <LinearLayout
+        android:id="@+id/layoutAlbum"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_row="0"
+        android:layout_column="2">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Title:"
+            android:id="@+id/tvTitle"
+            android:textColor="#ffc8c8c8"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Artist:"
+            android:id="@+id/tvArtist"
+            android:textColor="#ffc8c8c8"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Tracks:"
+            android:id="@+id/tvTracks"
+            android:textColor="#ffc8c8c8"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Year:"
+            android:id="@+id/tvYear"
+            android:textColor="#ffc8c8c8"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Publisher:"
+            android:id="@+id/tvPub"
+            android:textColor="#ffc8c8c8"
+            android:paddingLeft="20dp" />
+    </LinearLayout>
+</GridLayout>
