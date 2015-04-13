@@ -44,7 +44,7 @@ public class CDAdapter extends RecyclerView.Adapter<CDAdapter.ViewHolder> {
                 intent.putExtra("publisher",myCollection.get(position).getAlbumPublisher());
                 intent.putExtra("year",Integer.toString(myCollection.get(position).getAlbumYear()));
                 intent.putExtra("genre", myCollection.get(position).getAlbumGenre());
-                intent.putExtra("trackCt", myCollection.get(position).getAlbumTrackCount());
+                intent.putExtra("trackCt", myCollection.get(position).getAlbumTrackCount()); //Integer
                 main.startActivity(intent);
             }
         });

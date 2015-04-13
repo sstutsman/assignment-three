@@ -8,9 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class FullAlbumActivity extends ActionBarActivity {
+public class FullAlbumActivity extends Activity {
 
     ImageView imgAlbumCover_full;
     TextView artistName_full,
@@ -27,7 +28,7 @@ public class FullAlbumActivity extends ActionBarActivity {
         setContentView(R.layout.item_albumlisting_full2);
 
         imgAlbumCover_full  = (ImageView) findViewById(R.id.draw_albumcover_full);
-        imgAlbumCover_full.setImageResource(Integer.parseInt(getIntent().getStringExtra("albumArt")));
+        imgAlbumCover_full.setImageResource(getIntent().getExtras().getInt("albumArt"));
 
         artistName_full     = (TextView) findViewById(R.id.tv_artistName_full);
         artistName_full.setText(getIntent().getStringExtra("artistName"));
@@ -48,7 +49,7 @@ public class FullAlbumActivity extends ActionBarActivity {
         //It has a value in values/strings.xml
 
         trackAmt_full       = (TextView) findViewById(R.id.tv_trackAmt_full);
-        trackAmt_full.setText(getIntent().getStringExtra("trackCt"));
+        trackAmt_full.setText("" +getIntent().getExtras().getInt("trackCt"));
 
 
     }
