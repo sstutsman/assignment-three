@@ -4,36 +4,37 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
-public class MainActivity extends Activity {
+public class myAlbumView extends Activity {
+
+    private ImageView albumImage;
+    private TextView TvAlbumName;
+    private TextView TvArtist;
+    private TextView TvTrackCount;
+    private TextView TvYear;
+    private TextView TvPublisher;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+        setContentView(R.layout.activity_my_album_view);
 
+        albumImage = (ImageView) findViewById(R.id.image_album_cover);
+        TvAlbumName = (TextView) findViewById(R.id.Tv_albumName);
+        TvArtist = (TextView) findViewById(R.id.Tv_artist);
+        TvTrackCount = (TextView) findViewById(R.id.Tv_trackCount);
+        TvYear = (TextView) findViewById(R.id.Tv_year);
+        TvPublisher = (TextView) findViewById(R.id.Tv_publisher);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
+        albumImage.setImageResource(getIntent().getIntExtra("albumCoverID", -1));
+        TvAlbumName.setText(getIntent().getStringExtra("title"));
+        TvArtist.setText(getIntent().getStringExtra("artist"));
+        TvTrackCount.setText(getIntent().getStringExtra("genre"));
+        TvYear.setText(getIntent().getIntExtra("numTracks", -1) + " tracks");
+        TvPublisher.setText(getIntent().getIntExtra("year", -1) + "");
+    }//end onCreate method
+}//end AlbumView class

@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".myAlbum"
+            android:label="@string/title_activity_my_album" >
+        </activity>
+        <activity
+            android:name=".myAlbumAdapter"
+            android:label="@string/title_activity_my_album_adapter" >
+        </activity>
+        <activity
+            android:name=".myAlbumView"
+            android:label="@string/title_activity_my_album_view" >
+        </activity>
     </application>
 
 </manifest>

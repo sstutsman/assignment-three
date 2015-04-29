@@ -1,11 +1,103 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_album"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@drawable/bgcl"
+    android:orientation="horizontal">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/image_album_cover"
+        android:layout_width="@dimen/album_cover_thumb"
+        android:layout_height="@dimen/album_cover_thumb"
+        android:layout_margin="@dimen/margin_picture"
+        android:src="@drawable/ic_launcher" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_album_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:maxWidth="175dp"
+                android:textColor="@color/text_item_album"
+                android:text="title" />
+
+            <TextView
+                android:id="@+id/tv_num_tracks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_item_album"
+                android:text="numTracks"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:maxWidth="175dp"
+                android:textColor="@color/text_item_album"
+                android:text="artist" />
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/text_item_album"
+                android:text="year"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:maxWidth="150dp"
+                android:textColor="@color/text_item_album"
+                android:text="publisher"/>
+
+            <TextView
+                android:id="@+id/tv_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_text"
+                android:textSize="@dimen/text_size_small"
+                android:maxWidth="150dp"
+                android:textColor="@color/text_item_album"
+                android:text="genre"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
