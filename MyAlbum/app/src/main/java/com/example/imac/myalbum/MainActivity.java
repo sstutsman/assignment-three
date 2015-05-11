@@ -2,39 +2,51 @@ package com.example.imac.myalbum;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.view.InflateException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class myAlbumView extends Activity {
+public class MainActivity extends Activity {
 
-    private ImageView albumImage;
-    private TextView TvAlbumName;
-    private TextView TvArtist;
-    private TextView TvTrackCount;
-    private TextView TvYear;
-    private TextView TvPublisher;
+    private RecyclerView recyclermyAlbums;
 
+    private List<myAlbum> albums;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_album_view);
+        setContentView(R.layout.activity_main);
 
-        albumImage = (ImageView) findViewById(R.id.image_album_cover);
-        TvAlbumName = (TextView) findViewById(R.id.Tv_albumName);
-        TvArtist = (TextView) findViewById(R.id.Tv_artist);
-        TvTrackCount = (TextView) findViewById(R.id.Tv_trackCount);
-        TvYear = (TextView) findViewById(R.id.Tv_year);
-        TvPublisher = (TextView) findViewById(R.id.Tv_publisher);
+        recyclermyAlbums = (RecyclerView) findViewById(R.id.recycler_albums);
 
-        albumImage.setImageResource(getIntent().getIntExtra("albumCoverID", -1));
-        TvAlbumName.setText(getIntent().getStringExtra("title"));
-        TvArtist.setText(getIntent().getStringExtra("artist"));
-        TvTrackCount.setText(getIntent().getStringExtra("genre"));
-        TvYear.setText(getIntent().getIntExtra("numTracks", -1) + " tracks");
-        TvPublisher.setText(getIntent().getIntExtra("year", -1) + "");
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclermyAlbums.setLayoutManager(layoutManager);
+
+        albums = mockmyAlbums();
+
+        recyclermyAlbums.setAdapter(new myAlbumAdapter(albums));
     }//end onCreate method
-}//end AlbumView class
+
+    private List<myAlbum> mockmyAlbums() {
+
+        List<myAlbum> albums = new ArrayList<>();
+        //String AlbumName, String artist, int trackCount, int year,
+        albums.add(new myAlbum("Beyonce","Beyonce",10,1996,"Columbia",R.drawable.beyonce));
+        albums.add(new myAlbum("Beyonce","Beyonce",10,1996,"Columbia",R.drawable.beyonce));
+        albums.add(new myAlbum("Beyonce","Beyonce",10,1996,"Columbia",R.drawable.beyonce));
+        albums.add(new myAlbum("Beyonce","Beyonce",10,1996,"Columbia",R.drawable.beyonce));
+        albums.add(new myAlbum("Beyonce","Beyonce",10,1996,"Columbia",R.drawable.beyonce));
+
+
+
+        return albums;
+    }
+}//end MainActivity class
